@@ -1,0 +1,31 @@
+import { Component } from '@angular/core';
+import { BrandSectionComponent } from '../brand-section/brand-section.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
+import { GoogleLoginButtonComponent } from '../google-login-button/google-login-button.component';
+import { GithubLoginButtonComponent } from '../github-login-button/github-login-button.component';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-login-page',
+  standalone: true,
+  imports: [
+    BrandSectionComponent,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatDividerModule,
+    GoogleLoginButtonComponent,
+    GithubLoginButtonComponent,
+    RouterLink,
+  ],
+  templateUrl: './login-page.component.html',
+  styleUrl: './login-page.component.scss',
+})
+export class LoginPageComponent {
+  forgotPassword() {
+    alert('forgot password alert');
+  }
+}

@@ -1,0 +1,53 @@
+<app-brand-section></app-brand-section>
+<section class="form-container">
+  <h1 class="welcome-text">Create new account!</h1>
+  <form class="form">
+    <div class="form__controls">
+      <div class="form__control">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="outline">
+          <mat-label>Login</mat-label>
+          <input matInput />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </div>
+      <!-- <button class="button" type="submit">Sign in</button> -->
+    </div>
+
+    <button class="button" type="submit">Sign up</button>
+
+    <mat-divider></mat-divider>
+    <div class="form__buttons">
+      <p class="text--bold">
+        Already have an account?
+        <span class="text--bold text--purple" [routerLink]="['/signin']"
+          >Sign in!</span
+        >
+      </p>
+    </div>
+  </form>
+</section>

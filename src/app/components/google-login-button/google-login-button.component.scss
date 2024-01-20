@@ -1,0 +1,10 @@
+@use "button-mixins";
+@use "colors";
+
+:host {
+  @include button-mixins.social-login-button-styles;
+  transition: 0.25s;
+  &:hover {
+    background-color: colors.$grey;
+  }
+}

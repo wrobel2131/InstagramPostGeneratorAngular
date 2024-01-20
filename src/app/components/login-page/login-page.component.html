@@ -1,0 +1,48 @@
+<app-brand-section></app-brand-section>
+<section class="form-container">
+  <h1 class="welcome-text">Welcome!</h1>
+  <form class="form">
+    <div class="form__controls">
+      <div class="form__control">
+        <mat-form-field appearance="outline">
+          <mat-label>Login</mat-label>
+          <input matInput />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </div>
+      <div class="form__control">
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput />
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="form__buttons">
+      <p class="text--bold">
+        Forgot your password?
+        <span class="text--bold text--purple" (click)="forgotPassword()"
+          >Click here!</span
+        >
+      </p>
+      <button class="button" type="submit">Sign in</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="form__buttons">
+      <app-google-login-button></app-google-login-button>
+      <app-github-login-button></app-github-login-button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="form__buttons">
+      <p class="text--bold">
+        No account?
+        <span class="text--bold text--purple" [routerLink]="['/signup']"
+          >Click here!</span
+        >
+      </p>
+    </div>
+  </form>
+</section>
