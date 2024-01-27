@@ -1,1 +1,9 @@
-<p>authenticated-layout-side-panel works!</p>
+<div class="side-bar__header">
+  <app-logo></app-logo>
+  <span class="side-bar__header--name">InstaGenius</span>
+</div>
+<mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center">
+  <mat-tab label="Generator">Generator</mat-tab>
+  <mat-tab label="Gallery">Gallery</mat-tab>
+</mat-tab-group>
+<router-outlet></router-outlet>

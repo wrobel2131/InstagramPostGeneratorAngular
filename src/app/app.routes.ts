@@ -51,10 +51,10 @@ export const routes: Routes = [
         path: 'gallery',
         component: GalleryPageComponent,
       },
-      {
-        path: 'settings',
-        component: SettingPageComponent,
-      },
+      // {
+      //   path: 'settings',
+      //   component: SettingPageComponent,
+      // },
     ],
   },
 ];
