@@ -36,8 +36,9 @@
 .socials {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 210px;
+  justify-content: flex-end;
+  // width: 210px;
+  gap: 25px;
 
   i {
     cursor: pointer;
