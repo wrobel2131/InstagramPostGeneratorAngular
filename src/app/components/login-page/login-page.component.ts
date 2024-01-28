@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleLoginButtonComponent } from '../google-login-button/google-login-button.component';
 import { GithubLoginButtonComponent } from '../github-login-button/github-login-button.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -20,12 +20,19 @@ import { RouterLink } from '@angular/router';
     GoogleLoginButtonComponent,
     GithubLoginButtonComponent,
     RouterLink,
+    RouterModule,
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent {
+  constructor(private router: Router) {}
+
   forgotPassword() {
     alert('forgot password alert');
+  }
+
+  onLogin() {
+    this.router.navigate(['/dashboard/generator']);
   }
 }

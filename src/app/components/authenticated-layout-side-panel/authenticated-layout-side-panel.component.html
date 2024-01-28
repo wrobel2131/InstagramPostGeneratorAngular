@@ -1,0 +1,36 @@
+<div class="side-bar__header">
+  <app-logo></app-logo>
+  <span class="side-bar__header--name">InstaGenius</span>
+</div>
+<div class="side-bar__tabs">
+  <nav mat-tab-nav-bar [color]="'accent'" [tabPanel]="tabPanel">
+    @for (link of links; track link) {
+    <a
+      mat-tab-link
+      [routerLink]="link.path"
+      routerLinkActive
+      #activeLink="routerLinkActive"
+      [active]="activeLink.isActive"
+    >
+      {{ link.path | titlecase }}
+    </a>
+    }
+  </nav>
+</div>
+<div class="side-bar__content">
+  <mat-tab-nav-panel #tabPanel
+    ><router-outlet></router-outlet
+  ></mat-tab-nav-panel>
+</div>
+
+<div class="side-bar__footer">
+  <div class="brand">
+    <p class="brand__name">InstaGenius</p>
+    <p class="brand__copyright">Copyright © 2024 All Rights Reserved</p>
+  </div>
+  <div class="socials">
+    <i class="fa-brands fa-github fa-2xl" style="color: #000000"></i>
+    <i class="fa-brands fa-instagram fa-2xl" style="color: #000000"></i>
+    <i class="fa-brands fa-linkedin fa-2xl" style="color: #000000"></i>
+  </div>
+</div>
