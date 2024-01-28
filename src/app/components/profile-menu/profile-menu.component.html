@@ -1,0 +1,28 @@
+<div cdkMenuBar class="circle">
+  <a class="circle__image" cdkMenuItem [cdkMenuTriggerFor]="menu">
+    <img src="assets/images/placeholder.png" alt="" />
+  </a>
+</div>
+<ng-template #menu>
+  <div class="menu" cdkMenu>
+    <div class="info">
+      <p class="username__title">USERNAME</p>
+      <p class="user">
+        <span class="user__name">Dawid&nbsp;</span
+        ><span class="user__surname">Wróbel</span>
+      </p>
+    </div>
+
+    <a class="menu__item" cdkMenuItem (click)="settings()"
+      ><i class="fa-solid fa-gear fa-xl" style="color: #000000"></i
+      ><span>Profile settings</span></a
+    >
+    <a class="menu__item" cdkMenuItem (click)="logout()"
+      ><i
+        class="fa-solid fa-right-from-bracket fa-xl"
+        style="color: #000000"
+      ></i
+      ><span>Logout</span></a
+    >
+  </div>
+</ng-template>

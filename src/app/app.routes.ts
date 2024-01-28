@@ -44,6 +44,11 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: '',
+        redirectTo: 'generator',
+        pathMatch: 'full',
+      },
+      {
         path: 'generator',
         component: GeneratorPageComponent,
       },

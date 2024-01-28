@@ -1,0 +1,86 @@
+@use "colors";
+@use "typography";
+
+.circle {
+  background-color: aqua;
+  height: 85px;
+  width: 85px;
+  display: inline-block;
+  border-radius: 50%;
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.menu {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  width: 250px;
+  height: auto;
+  background-color: colors.$white;
+  border-radius: 5px;
+  border: 1px solid colors.$grey;
+  box-shadow: 0px 2px 5px 0px colors.$grey;
+
+  &__item {
+    padding: 20px 0;
+    border-top: 1px solid colors.$grey;
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    font-weight: typography.$font-weight-regular;
+
+    span {
+      margin-left: 10px;
+    }
+
+    span,
+    i {
+      transition: 0.2s;
+    }
+
+    &:hover {
+      span,
+      i {
+        color: colors.$pink !important;
+      }
+    }
+  }
+}
+
+.info {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.username__title {
+  font-weight: typography.$font-weight-bold;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.user {
+  font-size: 16px;
+  font-weight: typography.$font-weight-light;
+  color: colors.$semi-grey;
+
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}

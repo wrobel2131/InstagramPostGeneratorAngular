@@ -9,10 +9,7 @@ import { slider } from './route-animations';
   imports: [CommonModule, RouterLink, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    // <-- add your animations here
-    slider,
-  ],
+  animations: [slider],
 })
 export class AppComponent {
   prepareRoute(outlet: RouterOutlet) {
