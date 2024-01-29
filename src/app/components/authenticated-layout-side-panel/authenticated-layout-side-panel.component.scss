@@ -37,7 +37,9 @@
     display: block;
     width: 100%;
     flex: 1;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
     padding: 40px 25px;
   }
 
