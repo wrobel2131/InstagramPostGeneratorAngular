@@ -4,9 +4,14 @@
 @include mat.core();
 
 $instagram-post-generator-angular-primary: mat.define-palette(
+  mat.$pink-palette,
+  500,
+  A200,
+  A400
+);
+$instagram-post-generator-angular-accent: mat.define-palette(
   mat.$purple-palette
 );
-$instagram-post-generator-angular-accent: mat.define-palette(mat.$pink-palette);
 
 $instagram-post-generator-angular-warn: mat.define-palette(mat.$red-palette);
 
