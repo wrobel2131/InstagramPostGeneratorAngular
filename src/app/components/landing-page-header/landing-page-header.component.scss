@@ -62,9 +62,9 @@
   }
 }
 
+
 .hamburger {
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
 .hamburger-nav {
@@ -91,13 +91,45 @@
 }
 
 @media screen and (max-width: 1280px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: none;
+  }
 }
