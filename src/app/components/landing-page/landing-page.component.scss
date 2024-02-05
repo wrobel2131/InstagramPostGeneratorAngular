@@ -6,19 +6,40 @@
   width: 100vw;
   // background-size: 400%;
   // animation: bg-animation 20s infinite alternate;
-  overflow-y: auto;
-}
-.container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content;
-  gap: 50px;
-  width: 100%;
-  height: 100%;
   padding: 0 180px;
   padding-top: 25px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
   overflow-x: hidden;
+  border: 2px solid green;
+}
+
+header {
+  border: 2px solid white;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
+  border: 2px solid blue;
+}
+.menu {
+  display: block;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .footer {
