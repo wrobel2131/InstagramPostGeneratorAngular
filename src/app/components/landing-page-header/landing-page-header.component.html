@@ -6,19 +6,28 @@
   ></app-logo>
 </div>
 <div class="hamburger">
-    <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff"></i>
+  @if (isMenuExpanded) {
+    <i [@inOutAnimation] class="fa-solid fa-xmark fa-2xl icon" style="color: #ffffff" (click)="changeMobileMenuState()"></i>
+
+  } @else {
+    <i [@inOutAnimation] class="fa-solid fa-bars fa-2xl icon" style="color: #ffffff" (click)="changeMobileMenuState()"></i>
+
+  }
   </div>
-<!-- <ul class="hamburger-nav">
-    <li class="nav__item">
-      <a [routerLink]="'/'">Home</a>
-    </li>
-    <li class="nav__item">
-      <a [routerLink]="'/signin'">Sign in</a>
-    </li>
-    <li class="nav__item">
-      <a [routerLink]="'signup'">Join us</a>
-    </li>
-  </ul> -->
+  @if (isMenuExpanded) {
+    <ul class="hamburger-nav" [@inOutAnimation]>
+      <li class="nav__item">
+        <a [routerLink]="'/'">Home</a>
+      </li>
+      <li class="nav__item">
+        <a [routerLink]="'/signin'">Sign in</a>
+      </li>
+      <li class="nav__item">
+        <a [routerLink]="'signup'">Join us</a>
+      </li>
+    </ul>
+  }
+
 
 <ul class="nav">
   <li class="nav__item">

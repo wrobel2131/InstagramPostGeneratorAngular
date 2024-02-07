@@ -68,6 +68,26 @@
 }
 
 .hamburger-nav {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: colors.$black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  z-index: 2;
+  font-size: 24px;
+
+  .nav__item {
+    height: 10vh;
+    display: flex;
+    align-items: center
+  }
+
 }
 
 .button {
@@ -90,21 +110,19 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
-  .hamburger {
-    display: flex;
-    align-items: center;
-  }
+.icon {
+  cursor: pointer;
+}
 
-  .nav {
-    display: none;
-  }
+@media screen and (max-width: 1280px) {
+  
 }
 
 @media screen and (max-width: 1024px) {
   .hamburger {
     display: flex;
     align-items: center;
+    z-index: 3;
   }
 
   .nav {
@@ -116,6 +134,7 @@
   .hamburger {
     display: flex;
     align-items: center;
+    z-index: 3;
   }
 
   .nav {
@@ -127,6 +146,7 @@
   .hamburger {
     display: flex;
     align-items: center;
+    z-index: 3;
   }
 
   .nav {

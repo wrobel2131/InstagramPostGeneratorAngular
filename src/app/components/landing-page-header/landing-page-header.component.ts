@@ -8,6 +8,19 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { LogoComponent } from '../logo/logo.component';
 import { RouterLink } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
+export const fadeInAnimation = trigger(
+  'inOutAnimation',
+  [
+    transition(
+      ':enter',
+      [
+        style({ opacity: 0 }),
+        animate('200ms ease-out', style({ opacity: 1 })), // Adjust the duration as needed
+      ]
+    ),
+  ]
+);
 
 @Component({
   selector: 'app-landing-page-header',
@@ -15,25 +28,16 @@ import { RouterLink } from '@angular/router';
   imports: [MatButtonModule, LogoComponent, RouterLink],
   templateUrl: './landing-page-header.component.html',
   styleUrl: './landing-page-header.component.scss',
+  animations: [
+    fadeInAnimation
+  ]
 })
 export class LandingPageHeaderComponent {
   logoWidth = '120px';
   logoHeight = '120px';
-  // @HostBinding('class.fixed') isHeaderFixed = false;
-  // @HostBinding('class.fixed-padding') isHeaderFixedPadding = false;
-  // @HostBinding('class.not-fixed') isHeaderNotFixed = true;
+  isMenuExpanded = false;
 
-  // @HostListener('window:scroll', []) onScroll() {
-  //   if (window.scrollY > 50) {
-  //     this.isHeaderFixed = true;
-  //     this.isHeaderFixedPadding = true;
-
-  //     this.isHeaderNotFixed = false;
-  //   } else {
-  //     this.isHeaderFixed = false;
-  //     this.isHeaderFixedPadding = false;
-
-  //     this.isHeaderNotFixed = true;
-  //   }
-  // }
+  changeMobileMenuState() {
+    return this.isMenuExpanded = !this.isMenuExpanded;
+  }
 }
