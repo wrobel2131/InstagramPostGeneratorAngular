@@ -31,17 +31,15 @@ h1 {
   width: 50%;
   display: flex;
   justify-content: center;
-  height: 100%;
+  align-items: center;
   &--desktop {
     display: block;
+  }
 
-}
-
-&--mobile {
+  &--mobile {
     display: none;
+  }
 }
-}
-
 
 .button {
   @include button-mixins.button-styles;
@@ -64,31 +62,7 @@ h1 {
   }
 }
 
-
 @media screen and (max-width: 1280px) {
-:host {
-  flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  text-align: center;
-}
-
-.slogan {
-  width: 100%;
-  align-items: center;
-
-}
-.example-post {
-  width: 100%;
-}
-
-}
-
-
-@media screen and (max-width: 768px) {
-
   :host {
     flex-direction: column;
     align-items: center;
@@ -97,7 +71,26 @@ h1 {
   h1 {
     text-align: center;
   }
-  
+
+  .slogan {
+    width: 100%;
+    align-items: center;
+  }
+  .example-post {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
   .slogan {
     width: 100%;
     align-items: center;
@@ -107,19 +100,14 @@ h1 {
   }
 
   .example-post {
+    &--desktop {
+      display: none;
+    }
 
-      &--desktop {
-          display: none;
-  
-      }
-  
-      &--mobile {
-          display: block;
-      }
+    &--mobile {
+      display: block;
+    }
   }
-
-  
-
 }
 
 @media screen and (max-width: 480px) {
@@ -132,25 +120,22 @@ h1 {
     text-align: center;
     font-size: 50px;
   }
-  
+
   .slogan {
     width: 100%;
     align-items: center;
-
   }
   .example-post {
     width: 100%;
   }
 
   .example-post {
+    &--desktop {
+      display: none;
+    }
 
-      &--desktop {
-          display: none;
-  
-      }
-  
-      &--mobile {
-          display: block;
-      }
+    &--mobile {
+      display: block;
+    }
   }
 }
