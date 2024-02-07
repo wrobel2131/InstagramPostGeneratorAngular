@@ -49,3 +49,33 @@
     color: colors.$grey !important;
   }
 }
+
+
+@media screen and (max-width: 1280px) {
+  
+}
+
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .brand {
+
+
+    &__name {
+      font-size: 30px;
+    }
+
+    &__copyright {
+      font-size: 10px;
+    }
+  }
+
+  .socials {
+    gap: 10px
+  }
+
+}
