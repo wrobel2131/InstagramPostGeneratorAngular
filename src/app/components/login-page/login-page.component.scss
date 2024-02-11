@@ -19,19 +19,31 @@
   display: none;
 }
 
+.footer--mobile {
+  display: none;
+}
+
 
 @media screen and (max-width: 1280px) {
   :host {
     background: colors.$gradient;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 2vh;
+    overflow-y: auto;
+
   }
 
   .logo--mobile {
     display: block;
+  }
+
+  .footer--mobile {
+    display: flex;
+    align-self: flex-end
+
   }
 
   .form-container {
@@ -50,16 +62,25 @@
 
   :host {
     background: colors.$gradient;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 2vh;
+    overflow-y: auto;
+
   }
 
   .logo--mobile {
     display: block;
   }
+
+  .footer--mobile {
+    display: flex;
+    align-self: flex-end
+
+  }
+
 
   .form-container {
     @include form-sign-in-up-mixin.form-styles-mobile;
@@ -75,17 +96,25 @@
 
 @media screen and (max-width: 480px) {
   :host {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
+    
+    padding-top: 2vh;
+    overflow-y: auto;
     background: colors.$gradient;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 5vh;
+
   }
 
   .logo--mobile {
     display: block;
   }
+
+  .footer--mobile {
+    display: flex;
+    align-self: flex-end
+  }
+
 
   .form-container {
     @include form-sign-in-up-mixin.form-styles-mobile;

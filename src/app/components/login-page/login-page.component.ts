@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { BrandSectionComponent } from '../brand-section/brand-section.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleLoginButtonComponent } from '../google-login-button/google-login-button.component';
 import { GithubLoginButtonComponent } from '../github-login-button/github-login-button.component';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
+import { LandingPageFooterComponent } from '../landing-page-footer/landing-page-footer.component';
+import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
 
 @Component({
   selector: 'app-login-page',
@@ -15,9 +14,7 @@ import { LogoComponent } from '../logo/logo.component';
   imports: [
     BrandSectionComponent,
     LogoComponent,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
+  MobileFooterDarkComponent,
     MatDividerModule,
     GoogleLoginButtonComponent,
     GithubLoginButtonComponent,

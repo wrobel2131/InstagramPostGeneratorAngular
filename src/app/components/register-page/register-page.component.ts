@@ -1,21 +1,17 @@
 import { Component } from '@angular/core';
 import { BrandSectionComponent } from '../brand-section/brand-section.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterLink } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
+import { LandingPageFooterComponent } from '../landing-page-footer/landing-page-footer.component';
+import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
 
 @Component({
   selector: 'app-register-page',
   standalone: true,
   imports: [
-    BrandSectionComponent,
+    BrandSectionComponent,MobileFooterDarkComponent,
     LogoComponent,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
     MatDividerModule,
     RouterLink,
   ],
