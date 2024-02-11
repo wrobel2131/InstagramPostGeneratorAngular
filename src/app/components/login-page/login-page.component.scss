@@ -10,4 +10,91 @@
 
 .form-container {
   @include form-sign-in-up-mixin.form-styles;
+  .button {
+    align-self: flex-end;
+  }
 }
+
+.logo--mobile {
+  display: none;
+}
+
+
+@media screen and (max-width: 1280px) {
+  :host {
+    background: colors.$gradient;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5vh;
+  }
+
+  .logo--mobile {
+    display: block;
+  }
+
+  .form-container {
+    @include form-sign-in-up-mixin.form-styles-mobile;
+  }
+  .brand-panel--desktop {
+    display: none;
+  }
+
+  .welcome-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  :host {
+    background: colors.$gradient;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5vh;
+  }
+
+  .logo--mobile {
+    display: block;
+  }
+
+  .form-container {
+    @include form-sign-in-up-mixin.form-styles-mobile;
+  }
+
+  .brand-panel--desktop {
+    display: none;
+  }
+  .welcome-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :host {
+    background: colors.$gradient;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5vh;
+  }
+
+  .logo--mobile {
+    display: block;
+  }
+
+  .form-container {
+    @include form-sign-in-up-mixin.form-styles-mobile;
+  }
+  .brand-panel--desktop {
+    display: none;
+  }
+  .welcome-text {
+    display: none;
+  }
+}
+

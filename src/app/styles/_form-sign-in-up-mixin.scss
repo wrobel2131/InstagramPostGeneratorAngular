@@ -28,9 +28,32 @@
 
     &__control {
       width: 100%;
-      mat-form-field {
-        width: 100% !important;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &--label {
+        font-size: 12px;
+        font-weight: typography.$font-weight-regular;
+        margin: 5px;
       }
+
+      &--input {
+        width: 100%;
+        background-color: transparent;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        border: 1px solid colors.$black;
+        font-weight: typography.$font-weight-regular;
+
+        &:focus {
+          border-color: colors.$purple;
+          outline: none;
+        }
+      }
+
+      
     }
 
     &__buttons {
@@ -53,9 +76,15 @@
     line-height: 25px;
   }
   .text--purple {
-    color: colors.$dark_purple;
+    color: colors.$purple;
     cursor: pointer;
+    transition: 0.1s;
+
+    &:hover {
+      color: colors.$dark-purple;
+    }
   }
+
 
   .button {
     @include button-mixins.button-styles;
@@ -69,3 +98,77 @@
     }
   }
 }
+
+@mixin form-styles-mobile {
+  @media screen and (max-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3vh 10vw;
+    width: 100%;
+    color: colors.$white;
+
+    mat-divider {
+      background-color: colors.$white !important;
+    }
+
+    .form {
+     
+  
+      &__control {
+   
+  
+        &--input {
+        border: none;
+        background-color: rgba(colors.$white, 0.2);
+        color: colors.$white;
+  
+          &:focus {
+            background-color: rgba(colors.$white, 0.3);
+          }
+        }
+  
+        
+      }
+  
+      &__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+ 
+    .text--purple {
+      color: colors.$white;
+      text-decoration: underline;
+      font-weight: typography.$font-weight-bold;
+
+      &:hover {
+        color: colors.$purple;
+      }
+    }
+
+
+    .button {
+      @include button-mixins.button-styles;
+      background-color: transparent;
+      color: colors.$white;
+      border: 1px solid colors.$white;
+      transition: 0.25s;
+      border-radius: 0px;
+      width: 100%;
+  
+      &:hover {
+        background-color: transparent;
+        border-color: colors.$darker-white;
+        color: colors.$darker-white;
+        
+      }
+    }
+  }
+
+}
+

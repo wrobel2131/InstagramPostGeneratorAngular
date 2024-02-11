@@ -7,12 +7,14 @@ import { MatDividerModule } from '@angular/material/divider';
 import { GoogleLoginButtonComponent } from '../google-login-button/google-login-button.component';
 import { GithubLoginButtonComponent } from '../github-login-button/github-login-button.component';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
   imports: [
     BrandSectionComponent,
+    LogoComponent,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,

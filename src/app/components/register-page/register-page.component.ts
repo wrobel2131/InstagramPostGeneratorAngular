@@ -5,12 +5,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterLink } from '@angular/router';
+import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'app-register-page',
   standalone: true,
   imports: [
     BrandSectionComponent,
+    LogoComponent,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,

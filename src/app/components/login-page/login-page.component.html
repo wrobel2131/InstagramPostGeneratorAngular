@@ -1,25 +1,22 @@
-<app-brand-section></app-brand-section>
+<app-brand-section class="brand-panel--desktop"></app-brand-section>
+  <app-logo class="logo--mobile" [width]="'250'" [height]="'auto'" [routerLink]="'/'"></app-logo>
+
 <section class="form-container">
   <h1 class="welcome-text">Welcome!</h1>
   <form class="form">
     <div class="form__controls">
       <div class="form__control">
-        <mat-form-field appearance="outline">
-          <mat-label>Login</mat-label>
-          <input matInput />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-          <!-- <mat-hint>Hint</mat-hint> -->
-        </mat-form-field>
+        <label for="" class="form__control--label">Login</label>
+        <input class="form__control--input" type="text">
       </div>
       <div class="form__control">
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-          <!-- <mat-hint>Hint</mat-hint> -->
-        </mat-form-field>
+        <label for="" class="form__control--label">Password</label>
+        <input class="form__control--input" type="password">
       </div>
+      <a class="button" type= "submit" (click)="onLogin()">Sign in</a>
     </div>
+    <mat-divider></mat-divider>
+
 
     <div class="form__buttons">
       <p class="text--bold">
@@ -28,7 +25,6 @@
           >Click here!</span
         >
       </p>
-      <a class="button" type="submit" (click)="onLogin()">Sign in</a>
     </div>
     <mat-divider></mat-divider>
     <div class="form__buttons">

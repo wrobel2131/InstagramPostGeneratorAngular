@@ -1,45 +1,29 @@
-<app-brand-section></app-brand-section>
+<app-brand-section class="brand-panel--desktop"></app-brand-section>
+  <app-logo class="logo--mobile" [width]="'250'" [height]="'auto'" [routerLink]="'/'"></app-logo>
+
 <section class="form-container">
   <h1 class="welcome-text">Create new account!</h1>
   <form class="form">
     <div class="form__controls">
       <div class="form__control">
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-          <!-- <mat-hint>Hint</mat-hint> -->
-        </mat-form-field>
+       <label for="" class="form__control--label">Email</label>
+       <input class="form__control--input" type="text">
       </div>
       <div class="form__control">
-        <mat-form-field appearance="outline">
-          <mat-label>Login</mat-label>
-          <input matInput />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-          <!-- <mat-hint>Hint</mat-hint> -->
-        </mat-form-field>
+        <label for="" class="form__control--label">Login</label>
+       <input class="form__control--input" type="text">
       </div>
       <div class="form__control">
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-          <!-- <mat-hint>Hint</mat-hint> -->
-        </mat-form-field>
+        <label for="" class="form__control--label">Password</label>
+        <input class="form__control--input" type="password">
       </div>
       <div class="form__control">
-        <mat-form-field appearance="outline">
-          <mat-label>Confirm Password</mat-label>
-          <input matInput />
-          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-          <!-- <mat-hint>Hint</mat-hint> -->
-        </mat-form-field>
+        <label for="" class="form__control--label">Confirm Password</label>
+       <input class="form__control--input" type="password">
       </div>
-      <!-- <button class="button" type="submit">Sign in</button> -->
+      <a class="button" type= "submit">Sign up</a>
+
     </div>
-
-    <button class="button" type="submit">Sign up</button>
-
     <mat-divider></mat-divider>
     <div class="form__buttons">
       <p class="text--bold">
