@@ -1,3 +1,9 @@
 :host {
   overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 10px;
+  gap: 25px;
+
 }
