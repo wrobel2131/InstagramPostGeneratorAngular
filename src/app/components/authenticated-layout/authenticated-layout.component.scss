@@ -32,5 +32,11 @@
     height: calc(100% - 120px);
     overflow-y: auto;
     padding: 25px;
+
+    &--post {
+      //   margin-top: 200px;
+      //   margin-left: 300px;
+      //   scale: 3;
+    }
   }
 }

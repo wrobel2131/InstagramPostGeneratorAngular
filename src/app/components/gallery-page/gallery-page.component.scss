@@ -5,5 +5,24 @@
   place-items: center;
   padding: 10px;
   gap: 25px;
+}
 
+.post__wrapper {
+  overflow: hidden;
+  height: 200px;
+  width: 125px;
+}
+
+.small {
+  scale: 0.2;
+  display: block;
+  overflow: hidden;
+  transform-origin: left top;
+  transition: 0.2s;
+  z-index: 4;
+  cursor: pointer;
+
+  &:hover {
+    scale: 0.22;
+  }
 }
