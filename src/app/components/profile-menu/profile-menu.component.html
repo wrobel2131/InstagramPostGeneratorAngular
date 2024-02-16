@@ -13,7 +13,10 @@
       </p>
     </div>
 
-    <a class="menu__item" cdkMenuItem (click)="settings()"
+    <a
+      class="menu__item"
+      cdkMenuItem
+      [routerLink]="[{ outlets: { main: ['settings'] } }]"
       ><i class="fa-solid fa-gear fa-xl" style="color: #000000"></i
       ><span>Profile settings</span></a
     >

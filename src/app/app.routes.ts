@@ -6,6 +6,8 @@ import { AuthenticatedLayoutComponent } from './components/authenticated-layout/
 import { GeneratorPageComponent } from './components/generator-page/generator-page.component';
 import { GalleryPageComponent } from './components/gallery-page/gallery-page.component';
 import { SettingPageComponent } from './components/settings-page/settings-page.component';
+import { GeneratedPostComponent } from './components/generated-post/generated-post.component';
+import { DisplayedPostComponent } from './components/displayed-post/displayed-post.component';
 
 export const routes: Routes = [
   {
@@ -30,13 +32,6 @@ export const routes: Routes = [
     },
   },
   {
-    path: 'test',
-    component: GeneratorPageComponent,
-    data: {
-      animation: 'right',
-    },
-  },
-  {
     path: 'dashboard',
     component: AuthenticatedLayoutComponent,
     data: {
@@ -56,10 +51,21 @@ export const routes: Routes = [
         path: 'gallery',
         component: GalleryPageComponent,
       },
-      // {
-      //   path: 'settings',
-      //   component: SettingPageComponent,
-      // },
+      {
+        path: 'settings',
+        component: SettingPageComponent,
+        outlet: 'main'
+      },
+      {
+        path: 'generated',
+        component: GeneratedPostComponent,
+        outlet: 'main'
+      },
+      {
+        path: 'displayed',
+        component: DisplayedPostComponent,
+        outlet: 'main'
+      },
     ],
   },
 ];

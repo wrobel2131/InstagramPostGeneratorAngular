@@ -4,7 +4,7 @@
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
   padding: 10px;
-  gap: 25px;
+  // gap: 25px;
 }
 
 .post__wrapper {
@@ -14,15 +14,15 @@
 }
 
 .small {
-  scale: 0.2;
   display: block;
   overflow: hidden;
-  transform-origin: left top;
-  transition: 0.2s;
+  transform-origin: 0 0;
+  transform: scale(0.2);
   z-index: 4;
   cursor: pointer;
+  transition: 0.1s;
 
   &:hover {
-    scale: 0.22;
+    transform: scale(0.23);
   }
 }

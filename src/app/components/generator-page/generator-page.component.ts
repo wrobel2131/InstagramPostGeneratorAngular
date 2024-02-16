@@ -4,6 +4,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-generator-page',
@@ -18,4 +19,12 @@ import { MatExpansionModule } from '@angular/material/expansion';
   templateUrl: './generator-page.component.html',
   styleUrl: './generator-page.component.scss',
 })
-export class GeneratorPageComponent {}
+export class GeneratorPageComponent {
+
+  constructor(private router: Router){}
+  generate() {
+   
+    this.router.navigate(['dashboard',{outlets: {main: ['generated']}}])
+   
+  }
+}

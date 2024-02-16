@@ -10,7 +10,8 @@ import { GalleryPostElementComponent } from '../gallery-post-element/gallery-pos
   imports: [
     AuthenticatedLayoutSidePanelComponent,
     AuthenticatedLayoutHeaderComponent,
-    GalleryPostElementComponent
+    GalleryPostElementComponent,
+    RouterOutlet
   ],
   templateUrl: './authenticated-layout.component.html',
   styleUrl: './authenticated-layout.component.scss',
