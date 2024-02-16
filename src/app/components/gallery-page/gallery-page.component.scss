@@ -9,20 +9,20 @@
 
 .post__wrapper {
   overflow: hidden;
-  height: 200px;
-  width: 125px;
+  height: 250px;
+  width: 170px;
 }
 
 .small {
   display: block;
   overflow: hidden;
   transform-origin: 0 0;
-  transform: scale(0.2);
+  transform: scale(0.3);
   z-index: 4;
   cursor: pointer;
   transition: 0.1s;
 
   &:hover {
-    transform: scale(0.23);
+    transform: scale(0.33);
   }
 }

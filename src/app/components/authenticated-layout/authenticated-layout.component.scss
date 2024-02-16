@@ -32,6 +32,9 @@
     height: calc(100% - 120px);
     overflow-y: auto;
     padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &--post {
       //   margin-top: 200px;

@@ -45,6 +45,10 @@
     cursor: pointer;
     font-weight: typography.$font-weight-regular;
 
+    &:visited {
+      color: colors.$black;
+    }
+
     span {
       margin-left: 10px;
     }

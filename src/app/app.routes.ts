@@ -56,11 +56,11 @@ export const routes: Routes = [
         component: SettingPageComponent,
         outlet: 'main'
       },
-      {
-        path: 'generated',
-        component: GeneratedPostComponent,
-        outlet: 'main'
-      },
+      // {
+      //   path: 'generated',
+      //   component: GeneratedPostComponent,
+      //   outlet: 'main'
+      // },
       {
         path: 'displayed',
         component: DisplayedPostComponent,

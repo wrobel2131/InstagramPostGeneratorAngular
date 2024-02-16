@@ -24,7 +24,7 @@ export class GeneratorPageComponent {
   constructor(private router: Router){}
   generate() {
    
-    this.router.navigate(['dashboard',{outlets: {main: ['generated']}}])
+    this.router.navigate(['dashboard',{outlets: {main: ['displayed']}}])
    
   }
 }
