@@ -1,7 +1,7 @@
 @use "colors";
 @use "typography";
 @use "button-mixins";
-@use "control.scss";
+@use "control-mixin.scss";
 
 @mixin form-styles {
   display: flex;
@@ -28,7 +28,7 @@
     }
 
     &__control {
-      @include control.control-styles;
+      @include control-mixin.control-styles;
     }
 
     &__buttons {
