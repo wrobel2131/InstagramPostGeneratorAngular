@@ -78,7 +78,7 @@
   .text--purple {
     color: colors.$purple;
     cursor: pointer;
-    transition: 0.1s;
+    transition: 0.2s;
 
     &:hover {
       color: colors.$dark-purple;
@@ -91,7 +91,7 @@
     background-color: colors.$pink;
     color: colors.$white;
     border: 1px solid transparent;
-    transition: 0.25s;
+    transition: 0.2s;
 
     &:hover {
       background-color: colors.$dark-pink;
@@ -157,7 +157,7 @@
       background-color: transparent;
       color: colors.$white;
       border: 1px solid colors.$white;
-      transition: 0.25s;
+      transition: 0.2s;
       border-radius: 0px;
       width: 100%;
   

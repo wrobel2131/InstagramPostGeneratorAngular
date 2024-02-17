@@ -5,7 +5,7 @@
   @include button-mixins.social-login-button-styles;
   background-color: colors.$black;
   color: colors.$white;
-  transition: 0.25s;
+  transition: 0.2s;
   &:hover {
     background-color: colors.$dark-grey;
   }

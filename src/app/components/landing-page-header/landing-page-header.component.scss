@@ -94,10 +94,10 @@
 .button {
   @include button-mixins.button-styles;
   border: 1px solid colors.$white;
-  transition: 0.25s;
+  transition: 0.2s;
 
   span {
-    transition: 0.25s;
+    transition: 0.2s;
   }
   &:hover,
   &:focus {

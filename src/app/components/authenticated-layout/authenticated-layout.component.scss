@@ -17,6 +17,8 @@
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   flex: 1;
   &__header {
@@ -29,17 +31,10 @@
   }
 
   &__content {
-    height: calc(100% - 120px);
-    overflow-y: auto;
+    overflow-y: scroll;
     padding: 25px;
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    &--post {
-      //   margin-top: 200px;
-      //   margin-left: 300px;
-      //   scale: 3;
-    }
+    align-items: flex-start;
   }
 }
