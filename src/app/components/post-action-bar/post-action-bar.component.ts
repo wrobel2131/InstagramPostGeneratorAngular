@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './post-action-bar.component.html',
-  styleUrl: './post-action-bar.component.scss'
+  styleUrl: './post-action-bar.component.scss',
 })
-export class PostActionBarComponent {
-
-}
+export class PostActionBarComponent {}

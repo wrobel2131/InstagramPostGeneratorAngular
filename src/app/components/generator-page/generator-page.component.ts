@@ -20,11 +20,8 @@ import { Router } from '@angular/router';
   styleUrl: './generator-page.component.scss',
 })
 export class GeneratorPageComponent {
-
-  constructor(private router: Router){}
+  constructor(private router: Router) {}
   generate() {
-   
-    this.router.navigate(['dashboard',{outlets: {main: ['displayed']}}])
-   
+    this.router.navigate(['dashboard', { outlets: { main: ['displayed'] } }]);
   }
 }

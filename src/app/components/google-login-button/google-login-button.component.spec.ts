@@ -8,10 +8,9 @@ describe('GoogleLoginButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GoogleLoginButtonComponent]
-    })
-    .compileComponents();
-    
+      imports: [GoogleLoginButtonComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(GoogleLoginButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

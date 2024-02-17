@@ -8,10 +8,9 @@ describe('GalleryPostElementComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GalleryPostElementComponent]
-    })
-    .compileComponents();
-    
+      imports: [GalleryPostElementComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(GalleryPostElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

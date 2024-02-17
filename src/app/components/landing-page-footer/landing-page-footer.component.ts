@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './landing-page-footer.component.html',
-  styleUrl: './landing-page-footer.component.scss'
+  styleUrl: './landing-page-footer.component.scss',
 })
-export class LandingPageFooterComponent {
-
-}
+export class LandingPageFooterComponent {}

@@ -8,10 +8,9 @@ describe('GithubLoginButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GithubLoginButtonComponent]
-    })
-    .compileComponents();
-    
+      imports: [GithubLoginButtonComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(GithubLoginButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './google-login-button.component.html',
-  styleUrl: './google-login-button.component.scss'
+  styleUrl: './google-login-button.component.scss',
 })
-export class GoogleLoginButtonComponent {
-
-}
+export class GoogleLoginButtonComponent {}

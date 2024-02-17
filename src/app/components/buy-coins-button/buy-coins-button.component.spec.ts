@@ -8,10 +8,9 @@ describe('BuyCoinsButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BuyCoinsButtonComponent]
-    })
-    .compileComponents();
-    
+      imports: [BuyCoinsButtonComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(BuyCoinsButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

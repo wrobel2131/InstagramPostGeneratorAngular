@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './mobile-footer-dark.component.html',
-  styleUrl: './mobile-footer-dark.component.scss'
+  styleUrl: './mobile-footer-dark.component.scss',
 })
-export class MobileFooterDarkComponent {
-
-}
+export class MobileFooterDarkComponent {}

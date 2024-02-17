@@ -10,7 +10,8 @@ import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-d
   selector: 'app-register-page',
   standalone: true,
   imports: [
-    BrandSectionComponent,MobileFooterDarkComponent,
+    BrandSectionComponent,
+    MobileFooterDarkComponent,
     LogoComponent,
     MatDividerModule,
     RouterLink,

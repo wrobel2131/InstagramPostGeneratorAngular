@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './manage-user-picture.component.html',
-  styleUrl: './manage-user-picture.component.scss'
+  styleUrl: './manage-user-picture.component.scss',
 })
-export class ManageUserPictureComponent {
-
-}
+export class ManageUserPictureComponent {}

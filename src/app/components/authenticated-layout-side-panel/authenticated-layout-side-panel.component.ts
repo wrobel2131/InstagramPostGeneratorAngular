@@ -36,7 +36,10 @@ export class AuthenticatedLayoutSidePanelComponent implements OnInit {
     return (
       routes
         .find((route) => route.path === 'dashboard')
-        ?.children?.filter((child) => child.path !== '' && ['gallery', 'generator'].includes(child.path!)) || []
+        ?.children?.filter(
+          (child) =>
+            child.path !== '' && ['gallery', 'generator'].includes(child.path!)
+        ) || []
     );
   }
 }

@@ -1,6 +1,7 @@
 @use "colors";
 @use "typography";
 @use "button-mixins";
+@use "control.scss";
 
 @mixin form-styles {
   display: flex;
@@ -27,33 +28,7 @@
     }
 
     &__control {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      &--label {
-        font-size: 12px;
-        font-weight: typography.$font-weight-regular;
-        margin: 5px;
-      }
-
-      &--input {
-        width: 100%;
-        background-color: transparent;
-        padding: 15px;
-        border-radius: 5px;
-        font-size: 16px;
-        border: 1px solid colors.$black;
-        font-weight: typography.$font-weight-regular;
-
-        &:focus {
-          border-color: colors.$purple;
-          outline: none;
-        }
-      }
-
-      
+      @include control.control-styles;
     }
 
     &__buttons {
@@ -85,7 +60,6 @@
     }
   }
 
-
   .button {
     @include button-mixins.button-styles;
     background-color: colors.$pink;
@@ -114,24 +88,18 @@
     }
 
     .form {
-     
-  
       &__control {
-   
-  
         &--input {
-        border: none;
-        background-color: rgba(colors.$white, 0.2);
-        color: colors.$white;
-  
+          border: none;
+          background-color: rgba(colors.$white, 0.2);
+          color: colors.$white;
+
           &:focus {
             background-color: rgba(colors.$white, 0.3);
           }
         }
-  
-        
       }
-  
+
       &__buttons {
         width: 100%;
         display: flex;
@@ -140,7 +108,6 @@
       }
     }
 
- 
     .text--purple {
       color: colors.$white;
       text-decoration: underline;
@@ -151,7 +118,6 @@
       }
     }
 
-
     .button {
       @include button-mixins.button-styles;
       background-color: transparent;
@@ -160,15 +126,12 @@
       transition: 0.2s;
       border-radius: 0px;
       width: 100%;
-  
+
       &:hover {
         background-color: transparent;
         border-color: colors.$darker-white;
         color: colors.$darker-white;
-        
       }
     }
   }
-
 }
-

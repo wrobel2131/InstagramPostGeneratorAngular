@@ -1,28 +1,54 @@
 <app-brand-section class="brand-panel--desktop"></app-brand-section>
-  <app-logo class="logo--mobile" [width]="'150'" [height]="'auto'" [routerLink]="'/'"></app-logo>
+<app-logo
+  class="logo--mobile"
+  [width]="'150'"
+  [height]="'auto'"
+  [routerLink]="'/'"
+></app-logo>
 
 <section class="form-container">
   <h1 class="welcome-text">Create new account!</h1>
   <form class="form">
     <div class="form__controls">
       <div class="form__control">
-       <label for="" class="form__control--label">Email</label>
-       <input class="form__control--input" type="text">
+        <label for="email" class="form__control--label">Email</label>
+        <input
+          class="form__control--input"
+          type="text"
+          name="email"
+          id="email"
+        />
       </div>
       <div class="form__control">
-        <label for="" class="form__control--label">Login</label>
-       <input class="form__control--input" type="text">
+        <label for="login" class="form__control--label">Login</label>
+        <input
+          class="form__control--input"
+          type="text"
+          name="login"
+          id="login"
+        />
       </div>
       <div class="form__control">
-        <label for="" class="form__control--label">Password</label>
-        <input class="form__control--input" type="password">
+        <label for="password" class="form__control--label">Password</label>
+        <input
+          class="form__control--input"
+          type="password"
+          name="password"
+          id="password"
+        />
       </div>
       <div class="form__control">
-        <label for="" class="form__control--label">Confirm Password</label>
-       <input class="form__control--input" type="password">
+        <label for="confirm-password" class="form__control--label"
+          >Confirm Password</label
+        >
+        <input
+          class="form__control--input"
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+        />
       </div>
-      <a class="button" type= "submit">Sign up</a>
-
+      <a class="button" type="submit">Sign up</a>
     </div>
     <mat-divider></mat-divider>
     <div class="form__buttons">
@@ -36,4 +62,3 @@
   </form>
 </section>
 <app-mobile-footer-dark class="footer--mobile"></app-mobile-footer-dark>
-

@@ -7,8 +7,6 @@ import { PostActionBarComponent } from '../post-action-bar/post-action-bar.compo
   standalone: true,
   imports: [GalleryPostElementComponent, PostActionBarComponent],
   templateUrl: './displayed-post.component.html',
-  styleUrl: './displayed-post.component.scss'
+  styleUrl: './displayed-post.component.scss',
 })
-export class DisplayedPostComponent {
-
-}
+export class DisplayedPostComponent {}

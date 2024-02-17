@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './github-login-button.component.html',
-  styleUrl: './github-login-button.component.scss'
+  styleUrl: './github-login-button.component.scss',
 })
-export class GithubLoginButtonComponent {
-
-}
+export class GithubLoginButtonComponent {}

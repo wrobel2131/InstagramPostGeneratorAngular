@@ -8,10 +8,9 @@ describe('AuthenticatedLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AuthenticatedLayoutComponent]
-    })
-    .compileComponents();
-    
+      imports: [AuthenticatedLayoutComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AuthenticatedLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

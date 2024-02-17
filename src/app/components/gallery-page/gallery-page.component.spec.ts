@@ -8,10 +8,9 @@ describe('GalleryPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GalleryPageComponent]
-    })
-    .compileComponents();
-    
+      imports: [GalleryPageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(GalleryPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

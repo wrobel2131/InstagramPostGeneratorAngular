@@ -5,7 +5,6 @@ import { GoogleLoginButtonComponent } from '../google-login-button/google-login-
 import { GithubLoginButtonComponent } from '../github-login-button/github-login-button.component';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
-import { LandingPageFooterComponent } from '../landing-page-footer/landing-page-footer.component';
 import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
 
 @Component({
@@ -14,7 +13,7 @@ import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-d
   imports: [
     BrandSectionComponent,
     LogoComponent,
-  MobileFooterDarkComponent,
+    MobileFooterDarkComponent,
     MatDividerModule,
     GoogleLoginButtonComponent,
     GithubLoginButtonComponent,

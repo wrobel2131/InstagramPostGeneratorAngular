@@ -6,7 +6,11 @@ import { ExamplePostMobileComponent } from '../example-post-mobile/example-post-
 @Component({
   selector: 'app-landing-page-content',
   standalone: true,
-  imports: [ExamplePostDesktopComponent,ExamplePostMobileComponent, RouterLink],
+  imports: [
+    ExamplePostDesktopComponent,
+    ExamplePostMobileComponent,
+    RouterLink,
+  ],
   templateUrl: './landing-page-content.component.html',
   styleUrl: './landing-page-content.component.scss',
 })

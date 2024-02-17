@@ -1,26 +1,14 @@
-import {
-  Component,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  OnInit,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { LogoComponent } from '../logo/logo.component';
 import { RouterLink } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
-export const fadeInAnimation = trigger(
-  'inOutAnimation',
-  [
-    transition(
-      ':enter',
-      [
-        style({ opacity: 0 }),
-        animate('200ms ease-out', style({ opacity: 1 })), // Adjust the duration as needed
-      ]
-    ),
-  ]
-);
+export const fadeInAnimation = trigger('inOutAnimation', [
+  transition(':enter', [
+    style({ opacity: 0 }),
+    animate('200ms ease-out', style({ opacity: 1 })), // Adjust the duration as needed
+  ]),
+]);
 
 @Component({
   selector: 'app-landing-page-header',
@@ -28,9 +16,7 @@ export const fadeInAnimation = trigger(
   imports: [MatButtonModule, LogoComponent, RouterLink],
   templateUrl: './landing-page-header.component.html',
   styleUrl: './landing-page-header.component.scss',
-  animations: [
-    fadeInAnimation
-  ]
+  animations: [fadeInAnimation],
 })
 export class LandingPageHeaderComponent {
   logoWidth = '120px';
@@ -38,6 +24,6 @@ export class LandingPageHeaderComponent {
   isMenuExpanded = false;
 
   changeMobileMenuState() {
-    return this.isMenuExpanded = !this.isMenuExpanded;
+    return (this.isMenuExpanded = !this.isMenuExpanded);
   }
 }

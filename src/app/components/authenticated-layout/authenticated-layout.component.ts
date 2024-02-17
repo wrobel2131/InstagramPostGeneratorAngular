@@ -11,7 +11,7 @@ import { GalleryPostElementComponent } from '../gallery-post-element/gallery-pos
     AuthenticatedLayoutSidePanelComponent,
     AuthenticatedLayoutHeaderComponent,
     GalleryPostElementComponent,
-    RouterOutlet
+    RouterOutlet,
   ],
   templateUrl: './authenticated-layout.component.html',
   styleUrl: './authenticated-layout.component.scss',

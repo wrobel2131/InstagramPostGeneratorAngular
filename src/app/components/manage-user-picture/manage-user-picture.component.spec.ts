@@ -8,10 +8,9 @@ describe('ManageUserPictureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManageUserPictureComponent]
-    })
-    .compileComponents();
-    
+      imports: [ManageUserPictureComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ManageUserPictureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

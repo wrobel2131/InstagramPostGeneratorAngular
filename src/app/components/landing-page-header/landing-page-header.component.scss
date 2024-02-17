@@ -62,7 +62,6 @@
   }
 }
 
-
 .hamburger {
   display: none;
 }
@@ -86,9 +85,8 @@
   .nav__item {
     height: 10vh;
     display: flex;
-    align-items: center
+    align-items: center;
   }
-
 }
 
 .button {
@@ -116,7 +114,6 @@
 }
 
 @media screen and (max-width: 1280px) {
-  
 }
 
 @media screen and (max-width: 1024px) {

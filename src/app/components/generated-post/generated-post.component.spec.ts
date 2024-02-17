@@ -8,10 +8,9 @@ describe('GeneratedPostComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GeneratedPostComponent]
-    })
-    .compileComponents();
-    
+      imports: [GeneratedPostComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(GeneratedPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

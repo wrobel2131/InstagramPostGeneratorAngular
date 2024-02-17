@@ -8,10 +8,9 @@ describe('LandingPageFooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LandingPageFooterComponent]
-    })
-    .compileComponents();
-    
+      imports: [LandingPageFooterComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LandingPageFooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

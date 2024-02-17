@@ -16,16 +16,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
-export class LandingPageComponent {
-  /* Code responsible for checking, if header should be fixed or not,  maybe useful*/
-  // isHeaderFixed = false;
-  // @HostListener('window:scroll', []) onScroll() {
-  //   // console.log('efef');
-  //   if (window.scrollY > 50) {
-  //     // console.log('5050');
-  //     this.isHeaderFixed = true;
-  //   } else {
-  //     this.isHeaderFixed = false;
-  //   }
-  // }
-}
+export class LandingPageComponent {}
