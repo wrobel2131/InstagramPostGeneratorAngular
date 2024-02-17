@@ -7,9 +7,19 @@
   align-items: center;
 }
 
-.coin {
-  margin-right: -30px;
+.coin__wrapper {
+  margin-right: -20px;
   z-index: 2;
+  position: relative;
+}
+
+.amount {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: colors.$white;
+  font-size: 20px;
 }
 
 .buy-coins-button {
