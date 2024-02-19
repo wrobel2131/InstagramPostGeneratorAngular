@@ -40,14 +40,16 @@
 
 <ul class="nav">
   <li class="nav__item">
-    <a [routerLink]="'/'">Home</a>
+    <a [routerLink]="'/'">{{ "landingPage.navigation.home" | transloco }}</a>
   </li>
   <li class="nav__item">
-    <a [routerLink]="'/signin'">Sign in</a>
+    <a [routerLink]="'/signin'">{{
+      "landingPage.navigation.signIn" | transloco
+    }}</a>
   </li>
   <li class="nav__item">
     <button [routerLink]="'/signup'" class="button">
-      <span>Join us</span>
+      <span>{{ "landingPage.navigation.joinUs" | transloco }}</span>
     </button>
   </li>
 </ul>

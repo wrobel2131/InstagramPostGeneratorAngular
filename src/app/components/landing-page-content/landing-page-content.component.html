@@ -1,8 +1,12 @@
 <section class="slogan">
   <h1>
-    Generate ideas for your Instagram posts using <span class="bold">AI!</span>
+    {{ "landingPage.content.slogan" | transloco }}&nbsp;<span class="bold"
+      >AI!</span
+    >
   </h1>
-  <button [routerLink]="['signup']" class="button"><span>Sign up</span></button>
+  <button [routerLink]="['signup']" class="button">
+    <span>{{ "landingPage.content.signUp" | transloco }}</span>
+  </button>
 </section>
 <section class="example-post">
   <app-example-post-desktop

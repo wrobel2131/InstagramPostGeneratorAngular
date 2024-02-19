@@ -7,11 +7,13 @@
 ></app-logo>
 
 <section class="form-container">
-  <h1 class="welcome-text">Welcome!</h1>
+  <h1 class="welcome-text">{{ "loginPage.form.greetings" | transloco }}</h1>
   <form class="form">
     <div class="form__controls">
       <div class="form__control">
-        <label for="login" class="form__control--label">Login</label>
+        <label for="login" class="form__control--label">{{
+          "loginPage.form.loginLabel" | transloco
+        }}</label>
         <input
           class="form__control--input"
           type="text"
@@ -20,7 +22,9 @@
         />
       </div>
       <div class="form__control">
-        <label for="password" class="form__control--label">Password</label>
+        <label for="password" class="form__control--label">{{
+          "loginPage.form.passwordLabel" | transloco
+        }}</label>
         <input
           class="form__control--input"
           type="password"
@@ -28,15 +32,17 @@
           id="password"
         />
       </div>
-      <a class="button" type="submit" (click)="onLogin()">Sign in</a>
+      <a class="button" type="submit" (click)="onLogin()">{{
+        "loginPage.form.signIn" | transloco
+      }}</a>
     </div>
     <mat-divider></mat-divider>
     <div class="form__buttons">
       <p class="text--bold">
-        Forgot your password?
-        <span class="text--bold text--purple" (click)="forgotPassword()"
-          >Click here!</span
-        >
+        {{ "loginPage.form.forgotPassword" | transloco }}
+        <span class="text--bold text--purple" (click)="forgotPassword()">{{
+          "loginPage.form.clickHere" | transloco
+        }}</span>
       </p>
     </div>
     <mat-divider></mat-divider>
@@ -47,10 +53,10 @@
     <mat-divider></mat-divider>
     <div class="form__buttons">
       <p class="text--bold">
-        No account?
-        <span class="text--bold text--purple" [routerLink]="['/signup']"
-          >Click here!</span
-        >
+        {{ "loginPage.form.noAccount" | transloco }}
+        <span class="text--bold text--purple" [routerLink]="['/signup']">{{
+          "loginPage.form.clickHere" | transloco
+        }}</span>
       </p>
     </div>
   </form>

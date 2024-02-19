@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
 import { LandingPageFooterComponent } from '../landing-page-footer/landing-page-footer.component';
 import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-register-page',
@@ -15,6 +16,7 @@ import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-d
     LogoComponent,
     MatDividerModule,
     RouterLink,
+    TranslocoModule,
   ],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.scss',

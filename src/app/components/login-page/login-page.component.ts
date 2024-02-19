@@ -6,6 +6,7 @@ import { GithubLoginButtonComponent } from '../github-login-button/github-login-
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
 import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-login-page',
@@ -19,6 +20,7 @@ import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-d
     GithubLoginButtonComponent,
     RouterLink,
     RouterModule,
+    TranslocoModule,
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss',

@@ -7,11 +7,15 @@
 ></app-logo>
 
 <section class="form-container">
-  <h1 class="welcome-text">Create new account!</h1>
+  <h1 class="welcome-text">
+    {{ "registerPage.form.createNewAccount" | transloco }}
+  </h1>
   <form class="form">
     <div class="form__controls">
       <div class="form__control">
-        <label for="email" class="form__control--label">Email</label>
+        <label for="email" class="form__control--label">{{
+          "registerPage.form.emailLabel" | transloco
+        }}</label>
         <input
           class="form__control--input"
           type="text"
@@ -20,7 +24,9 @@
         />
       </div>
       <div class="form__control">
-        <label for="login" class="form__control--label">Login</label>
+        <label for="login" class="form__control--label">{{
+          "registerPage.form.loginLabel" | transloco
+        }}</label>
         <input
           class="form__control--input"
           type="text"
@@ -29,7 +35,9 @@
         />
       </div>
       <div class="form__control">
-        <label for="password" class="form__control--label">Password</label>
+        <label for="password" class="form__control--label">{{
+          "registerPage.form.passwordLabel" | transloco
+        }}</label>
         <input
           class="form__control--input"
           type="password"
@@ -38,9 +46,9 @@
         />
       </div>
       <div class="form__control">
-        <label for="confirm-password" class="form__control--label"
-          >Confirm Password</label
-        >
+        <label for="confirm-password" class="form__control--label">{{
+          "registerPage.form.confirmPasswordLabel" | transloco
+        }}</label>
         <input
           class="form__control--input"
           type="password"
@@ -48,15 +56,17 @@
           id="confirm-password"
         />
       </div>
-      <a class="button" type="submit">Sign up</a>
+      <a class="button" type="submit">{{
+        "registerPage.form.signUp" | transloco
+      }}</a>
     </div>
     <mat-divider></mat-divider>
     <div class="form__buttons">
       <p class="text--bold">
-        Already have an account?
-        <span class="text--bold text--purple" [routerLink]="['/signin']"
-          >Sign in!</span
-        >
+        {{ "registerPage.form.haveAccount" | transloco }}
+        <span class="text--bold text--purple" [routerLink]="['/signin']">{{
+          "registerPage.form.signIn" | transloco
+        }}</span>
       </p>
     </div>
   </form>

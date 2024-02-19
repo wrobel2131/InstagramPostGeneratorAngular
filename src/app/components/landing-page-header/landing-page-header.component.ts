@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LogoComponent } from '../logo/logo.component';
 import { RouterLink } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { TranslocoModule } from '@ngneat/transloco';
 export const fadeInAnimation = trigger('inOutAnimation', [
   transition(':enter', [
     style({ opacity: 0 }),
@@ -13,7 +14,7 @@ export const fadeInAnimation = trigger('inOutAnimation', [
 @Component({
   selector: 'app-landing-page-header',
   standalone: true,
-  imports: [MatButtonModule, LogoComponent, RouterLink],
+  imports: [MatButtonModule, LogoComponent, RouterLink, TranslocoModule],
   templateUrl: './landing-page-header.component.html',
   styleUrl: './landing-page-header.component.scss',
   animations: [fadeInAnimation],
