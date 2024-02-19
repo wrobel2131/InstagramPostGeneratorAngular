@@ -10,6 +10,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { LogoComponent } from '../logo/logo.component';
 import { CommonModule } from '@angular/common';
 import { routes } from '../../app.routes';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-authenticated-layout-side-panel',
@@ -21,6 +22,7 @@ import { routes } from '../../app.routes';
     MatTabsModule,
     LogoComponent,
     RouterLinkActive,
+    TranslocoModule,
   ],
   templateUrl: './authenticated-layout-side-panel.component.html',
   styleUrl: './authenticated-layout-side-panel.component.scss',

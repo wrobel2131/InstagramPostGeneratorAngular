@@ -18,14 +18,14 @@
       cdkMenuItem
       [routerLink]="[{ outlets: { main: ['settings'] } }]"
       ><i class="fa-solid fa-gear fa-xl" style="color: #000000"></i
-      ><span>Profile settings</span></a
+      ><span>{{ "menu.profileSettings" | transloco }}</span></a
     >
     <a class="menu__item" cdkMenuItem (click)="logout()"
       ><i
         class="fa-solid fa-right-from-bracket fa-xl"
         style="color: #000000"
       ></i
-      ><span>Logout</span></a
+      ><span>{{ "menu.logout" | transloco }}</span></a
     >
   </div>
 </ng-template>

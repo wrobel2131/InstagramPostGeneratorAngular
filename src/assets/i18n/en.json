@@ -45,7 +45,7 @@
     "textareaLabel": "Describe your post idea",
     "commonOptions": {
       "model": "Model",
-      "premium": "Pemium"
+      "premium": "Premium"
     },
     "graphicOptions": {
       "title": "Graphic options",
@@ -98,7 +98,9 @@
         },
         "upgrade": "Upgrade"
       },
-      "billingInfoPage": {}
+      "billingInfoPage": {
+        "tab": "Billing Information"
+      }
     }
   },
   "buyCoins": "Buy coins",

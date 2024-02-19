@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Router } from '@angular/router';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-generator-page',
@@ -15,6 +16,7 @@ import { Router } from '@angular/router';
     MatInputModule,
     MatSelectModule,
     MatExpansionModule,
+    TranslocoModule,
   ],
   templateUrl: './generator-page.component.html',
   styleUrl: './generator-page.component.scss',

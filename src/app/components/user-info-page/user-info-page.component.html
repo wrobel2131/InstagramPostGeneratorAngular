@@ -1,23 +1,38 @@
 <form class="info">
   <div class="control">
-    <label class="control--label" for="name">Name</label>
+    <label class="control--label" for="name">{{
+      "profileSettingsPage.userDataSection.userInfoPage.form.nameLabel"
+        | transloco
+    }}</label>
     <input class="control--input" type="text" name="name" id="name" />
   </div>
   <div class="control">
-    <label class="control--label" for="surname">Surname</label>
+    <label class="control--label" for="surname">{{
+      "profileSettingsPage.userDataSection.userInfoPage.form.surnameLabel"
+        | transloco
+    }}</label>
     <input class="control--input" type="text" name="surname" id="surname" />
   </div>
   <div class="control">
-    <label class="control--label" for="username">Username</label>
+    <label class="control--label" for="username">{{
+      "profileSettingsPage.userDataSection.userInfoPage.form.usernameLabel"
+        | transloco
+    }}</label>
     <input class="control--input" type="text" name="username" id="username" />
   </div>
 
   <div class="control">
-    <label class="control--label" for="email">Email</label>
+    <label class="control--label" for="email">{{
+      "profileSettingsPage.userDataSection.userInfoPage.form.emailLabel"
+        | transloco
+    }}</label>
     <input class="control--input" type="text" name="email" id="email" />
   </div>
   <div class="control">
-    <label class="control--label" for="password">Password</label>
+    <label class="control--label" for="password">{{
+      "profileSettingsPage.userDataSection.userInfoPage.form.passwordLabel"
+        | transloco
+    }}</label>
     <input
       class="control--input"
       type="password"
@@ -26,9 +41,10 @@
     />
   </div>
   <div class="control">
-    <label class="control--label" for="confirm-password"
-      >Confirm password</label
-    >
+    <label class="control--label" for="confirm-password">{{
+      "profileSettingsPage.userDataSection.userInfoPage.form.confirmPasswordLabel"
+        | transloco
+    }}</label>
     <input
       class="control--input"
       type="password"
@@ -36,5 +52,7 @@
       id="confirm-password"
     />
   </div>
-  <button class="upgrade">Upgrade</button>
+  <button class="upgrade">
+    {{ "profileSettingsPage.userDataSection.userInfoPage.upgrade" | transloco }}
+  </button>
 </form>

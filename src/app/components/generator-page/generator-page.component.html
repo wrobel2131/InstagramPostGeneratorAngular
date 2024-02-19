@@ -1,12 +1,10 @@
-<p class="title">How does it work?</p>
+<p class="title">{{ "generatorPage.title" | transloco }}</p>
 <p class="description">
-  Start by describing the type of post you have in mind. Whether it's a product
-  promotion, a lifestyle shot, or a motivational quote, provide a brief text
-  description of your vision for the post.
+  {{ "generatorPage.instruction" | transloco }}
 </p>
 <form class="form">
   <mat-form-field class="prompt-control" appearance="outline">
-    <mat-label>Describe your post idea</mat-label>
+    <mat-label>{{ "generatorPage.textareaLabel" | transloco }}</mat-label>
     <textarea rows="5" matInput></textarea>
   </mat-form-field>
 
@@ -14,30 +12,48 @@
 
   <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
-      <mat-panel-title> Graphic options </mat-panel-title>
+      <mat-panel-title>{{
+        "generatorPage.graphicOptions.title" | transloco
+      }}</mat-panel-title>
     </mat-expansion-panel-header>
     <div class="options">
       <div class="options__section">
         <mat-form-field class="option-control">
-          <mat-label>Model</mat-label>
+          <mat-label>{{
+            "generatorPage.commonOptions.model" | transloco
+          }}</mat-label>
           <mat-select>
             <mat-option value="dall-e-2">DALL-E 2</mat-option>
-            <mat-option value="dall-e-3">DALL-E 3 (Premium)</mat-option>
+            <mat-option value="dall-e-3"
+              >DALL-E 3 ({{
+                "generatorPage.commonOptions.premium" | transloco
+              }})</mat-option
+            >
           </mat-select>
         </mat-form-field>
       </div>
       <div class="options__section">
         <mat-form-field class="option-control">
-          <mat-label>Style</mat-label>
+          <mat-label>{{
+            "generatorPage.graphicOptions.style.title" | transloco
+          }}</mat-label>
           <mat-select>
-            <mat-option value="vivid">Vivid</mat-option>
-            <mat-option value="natural">Natural</mat-option>
+            <mat-option value="vivid">{{
+              "generatorPage.graphicOptions.style.vivid" | transloco
+            }}</mat-option>
+            <mat-option value="natural">{{
+              "generatorPage.graphicOptions.style.natural" | transloco
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field class="option-control">
-          <mat-label>Quality</mat-label>
+          <mat-label>{{
+            "generatorPage.graphicOptions.quality.title" | transloco
+          }}</mat-label>
           <mat-select>
-            <mat-option value="standard">Standard</mat-option>
+            <mat-option value="standard">{{
+              "generatorPage.graphicOptions.quality.standard" | transloco
+            }}</mat-option>
             <mat-option value="hd">HD</mat-option>
           </mat-select>
         </mat-form-field>
@@ -47,15 +63,23 @@
   <mat-divider></mat-divider>
   <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
-      <mat-panel-title> Description options </mat-panel-title>
+      <mat-panel-title>
+        {{ "generatorPage.descriptionOptions.title" | transloco }}
+      </mat-panel-title>
     </mat-expansion-panel-header>
     <div class="options">
       <div class="options__section">
         <mat-form-field class="option-control">
-          <mat-label>Model</mat-label>
+          <mat-label>{{
+            "generatorPage.commonOptions.model" | transloco
+          }}</mat-label>
           <mat-select>
             <mat-option value="gpt-3.5">GPT-3.5</mat-option>
-            <mat-option value="gpt-4">GPT-4 (Premium)</mat-option>
+            <mat-option value="gpt-4"
+              >GPT-4 ({{
+                "generatorPage.commonOptions.premium" | transloco
+              }})</mat-option
+            >
           </mat-select>
         </mat-form-field>
       </div>
@@ -63,5 +87,7 @@
   </mat-expansion-panel>
 </form>
 <div class="buttons">
-  <button class="button" (click)="generate()">Generate</button>
+  <button class="button" (click)="generate()">
+    {{ "generatorPage.generate" | transloco }}
+  </button>
 </div>

@@ -16,7 +16,7 @@
   },
   "loginPage": {
     "form": {
-      "greetings": "Witamy",
+      "greetings": "Witaj!",
       "loginLabel": "Login",
       "passwordLabel": "Hasło",
       "signIn": "Zaloguj się",
@@ -41,7 +41,7 @@
   "generatorPage": {
     "generatorTab": "Generator",
     "title": "Jak to działa?",
-    "instruction": "Zacznij od opisania rodzaju postu, który masz na myśli. Czy to promocja produktu, zdjęcie lifestyle'owe czy motywacyjny cytat, podaj krótki opis tekstowy swojej wizji posta.",
+    "instruction": "Zacznij od opisania rodzaju postu, który masz na myśli. Czy to promocja produktu, zdjęcie lifestyle'owe, czy motywacyjny cytat, podaj krótki opis tekstowy swojej wizji posta.",
     "textareaLabel": "Opisz swój pomysł na post",
     "commonOptions": {
       "model": "Model",
@@ -69,7 +69,7 @@
     "description": {
       "likedBy": "Polubione przez",
       "and": "i",
-      "others": "innych"
+      "others": "inni"
     }
   },
   "galleryPage": {
@@ -96,9 +96,11 @@
           "passwordLabel": "Hasło",
           "confirmPasswordLabel": "Potwierdź hasło"
         },
-        "upgrade": "Ulepsz"
+        "upgrade": "Aktualizuj"
       },
-      "billingInfoPage": {}
+      "billingInfoPage": {
+        "tab": "Informacje o płatnościach"
+      }
     }
   },
   "buyCoins": "Kup monety",

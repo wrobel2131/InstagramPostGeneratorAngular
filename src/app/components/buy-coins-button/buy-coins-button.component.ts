@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { TranslocoModule } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-buy-coins-button',
   standalone: true,
-  imports: [],
+  imports: [TranslocoModule],
   templateUrl: './buy-coins-button.component.html',
   styleUrl: './buy-coins-button.component.scss',
 })
