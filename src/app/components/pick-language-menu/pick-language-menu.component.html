@@ -1,0 +1,9 @@
+<mat-form-field class="language-picker">
+  <mat-select [(value)]="selected.name">
+    @for (language of languages; track $index) {
+    <mat-option [value]="language.name">
+      {{ language.icon }}
+    </mat-option>
+    }
+  </mat-select>
+</mat-form-field>

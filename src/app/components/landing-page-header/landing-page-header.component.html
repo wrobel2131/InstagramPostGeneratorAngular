@@ -35,6 +35,9 @@
   <li class="nav__item">
     <a [routerLink]="'signup'">Join us</a>
   </li>
+  <li class="nav__item nav__item--languages">
+    <app-pick-language-menu></app-pick-language-menu>
+  </li>
 </ul>
 }
 
@@ -51,5 +54,8 @@
     <button [routerLink]="'/signup'" class="button">
       <span>{{ "landingPage.navigation.joinUs" | transloco }}</span>
     </button>
+  </li>
+  <li class="nav__item nav__item--languages">
+    <app-pick-language-menu></app-pick-language-menu>
   </li>
 </ul>
