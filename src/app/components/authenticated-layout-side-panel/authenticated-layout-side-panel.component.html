@@ -1,6 +1,11 @@
 <div class="side-bar__header">
-  <app-logo></app-logo>
-  <span class="side-bar__header--name">InstaGenius</span>
+  <div class="side-bar__header--left">
+    <app-logo></app-logo>
+    <span class="side-bar__header--name">InstaGenius</span>
+  </div>
+  <div class="side-bar__header--right">
+    <app-pick-language-menu></app-pick-language-menu>
+  </div>
 </div>
 <div class="side-bar__tabs">
   <nav mat-tab-nav-bar [color]="'accent'" [tabPanel]="tabPanel">

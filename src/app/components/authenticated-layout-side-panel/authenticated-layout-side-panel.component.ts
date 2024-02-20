@@ -11,6 +11,7 @@ import { LogoComponent } from '../logo/logo.component';
 import { CommonModule } from '@angular/common';
 import { routes } from '../../app.routes';
 import { TranslocoModule } from '@ngneat/transloco';
+import { PickLanguageMenuComponent } from '../pick-language-menu/pick-language-menu.component';
 
 @Component({
   selector: 'app-authenticated-layout-side-panel',
@@ -22,6 +23,7 @@ import { TranslocoModule } from '@ngneat/transloco';
     MatTabsModule,
     LogoComponent,
     RouterLinkActive,
+    PickLanguageMenuComponent,
     TranslocoModule,
   ],
   templateUrl: './authenticated-layout-side-panel.component.html',

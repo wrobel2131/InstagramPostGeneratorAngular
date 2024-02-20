@@ -19,9 +19,22 @@
     background: colors.$gradient;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 16px;
+    &--left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &--right {
+      display: flex;
+      padding-top: 30px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
     &--name {
       @include brand-name-mixin.brand-name-typography-styles;
       font-size: 36px;
