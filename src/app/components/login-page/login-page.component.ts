@@ -7,6 +7,7 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
 import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
 import { TranslocoModule } from '@ngneat/transloco';
+import { PickLanguageMenuComponent } from '../pick-language-menu/pick-language-menu.component';
 
 @Component({
   selector: 'app-login-page',
@@ -15,6 +16,7 @@ import { TranslocoModule } from '@ngneat/transloco';
     BrandSectionComponent,
     LogoComponent,
     MobileFooterDarkComponent,
+    PickLanguageMenuComponent,
     MatDividerModule,
     GoogleLoginButtonComponent,
     GithubLoginButtonComponent,

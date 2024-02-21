@@ -87,7 +87,7 @@
         "form": {
           "nameLabel": "Name",
           "surnameLabel": "Surname",
-          "usernameLabel": "Username",
+          "loginLabel": "Login",
           "emailLabel": "Email",
           "passwordLabel": "Password",
           "confirmPasswordLabel": "Confirm Password"

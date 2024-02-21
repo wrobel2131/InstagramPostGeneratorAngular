@@ -33,7 +33,7 @@
       "loginLabel": "Login",
       "passwordLabel": "Hasło",
       "confirmPasswordLabel": "Potwierdź hasło",
-      "signUp": "Zapisz się",
+      "signUp": "Zarejestruj się",
       "haveAccount": "Masz już konto?",
       "signIn": "Zaloguj się!"
     }
@@ -87,7 +87,7 @@
         "form": {
           "nameLabel": "Imię",
           "surnameLabel": "Nazwisko",
-          "usernameLabel": "Nazwa użytkownika",
+          "loginLabel": "Login",
           "emailLabel": "Email",
           "passwordLabel": "Hasło",
           "confirmPasswordLabel": "Potwierdź hasło"

@@ -6,6 +6,7 @@ import { LogoComponent } from '../logo/logo.component';
 import { LandingPageFooterComponent } from '../landing-page-footer/landing-page-footer.component';
 import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
 import { TranslocoModule } from '@ngneat/transloco';
+import { PickLanguageMenuComponent } from '../pick-language-menu/pick-language-menu.component';
 
 @Component({
   selector: 'app-register-page',
@@ -15,6 +16,7 @@ import { TranslocoModule } from '@ngneat/transloco';
     MobileFooterDarkComponent,
     LogoComponent,
     MatDividerModule,
+    PickLanguageMenuComponent,
     RouterLink,
     TranslocoModule,
   ],
