@@ -28,8 +28,12 @@
   </div>
   <div class="description__likes">
     <p>
-      Liked by <span class="description__likes--bold">random-user</span> and
-      <span class="description__likes--bold">others</span>
+      {{ "displayedPost.description.likedBy" | transloco }}
+      <span class="description__likes--bold">random-user</span>
+      {{ "displayedPost.description.and" | transloco }}
+      <span class="description__likes--bold">{{
+        "displayedPost.description.others" | transloco
+      }}</span>
     </p>
   </div>
   <p class="description__text">

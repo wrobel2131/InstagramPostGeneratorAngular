@@ -39,7 +39,6 @@
     }
   },
   "generatorPage": {
-    "generatorTab": "Generator",
     "title": "How does it work?",
     "instruction": "Start by describing the type of post you have in mind. Whether it's a product promotion, a lifestyle shot, or a motivational quote, provide a brief text description of your vision for the post.",
     "textareaLabel": "Describe your post idea",
@@ -71,9 +70,6 @@
       "and": "and",
       "others": "others"
     }
-  },
-  "galleryPage": {
-    "galleryTab": "Gallery"
   },
   "menu": {
     "profileSettings": "Profile Settings",
@@ -107,5 +103,9 @@
 
   "footer": {
     "rights": "All Rights Reserved"
+  },
+  "routes": {
+    "gallery": "Gallery",
+    "generator": "Generator"
   }
 }

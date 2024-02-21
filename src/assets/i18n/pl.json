@@ -39,7 +39,6 @@
     }
   },
   "generatorPage": {
-    "generatorTab": "Generator",
     "title": "Jak to działa?",
     "instruction": "Zacznij od opisania rodzaju postu, który masz na myśli. Czy to promocja produktu, zdjęcie lifestyle'owe, czy motywacyjny cytat, podaj krótki opis tekstowy swojej wizji posta.",
     "textareaLabel": "Opisz swój pomysł na post",
@@ -69,11 +68,8 @@
     "description": {
       "likedBy": "Polubione przez",
       "and": "i",
-      "others": "inni"
+      "others": "innych"
     }
-  },
-  "galleryPage": {
-    "galleryTab": "Galeria"
   },
   "menu": {
     "profileSettings": "Ustawienia profilu",
@@ -106,5 +102,9 @@
   "buyCoins": "Kup monety",
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone"
+  },
+  "routes": {
+    "gallery": "Galeria",
+    "generator": "Generator"
   }
 }
