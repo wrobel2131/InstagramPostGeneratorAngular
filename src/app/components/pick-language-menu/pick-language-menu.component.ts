@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { TranslationService } from '../../services/translation.service';
-import { AvailableLangs } from '@ngneat/transloco';
-import { SUPPORTED_LANGUAGES } from '../../models/supported-languages';
 import { Language } from '../../models/language.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-pick-language-menu',
@@ -13,28 +12,32 @@ import { Language } from '../../models/language.model';
   templateUrl: './pick-language-menu.component.html',
   styleUrl: './pick-language-menu.component.scss',
 })
-export class PickLanguageMenuComponent implements OnInit {
+export class PickLanguageMenuComponent implements OnInit, OnDestroy {
   constructor(private translationService: TranslationService) {}
 
   languages!: Language[];
-
-  selected!: Language;
+  currentLanguage!: Language;
+  currentLanguageSubscription!: Subscription;
 
   ngOnInit(): void {
     this.languages = this.translationService.getAvailableLanguages();
-    this.selected = this.translationService.getActiveLanguage();
-    console.log(this.translationService.getAvailableLanguages());
-    console.log(this.translationService.getActiveLanguage());
+    this.currentLanguageSubscription = this.translationService
+      .getLanguageChangesObservable$()
+      .subscribe(
+        () =>
+          (this.currentLanguage = this.translationService.getActiveLanguage())
+      );
   }
 
   changeLang(event: MatSelectChange) {
-    console.log(event);
     this.translationService.changeActiveLanguage(event.value);
-    // console.log(this.translationService.getActiveLanguage());
   }
 
   getFlagClass(code: string): string {
-    console.log('flag-icon flag-icon-' + code);
     return 'fi fi-' + code;
+  }
+
+  ngOnDestroy() {
+    this.currentLanguageSubscription.unsubscribe();
   }
 }

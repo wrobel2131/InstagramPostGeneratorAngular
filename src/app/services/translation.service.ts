@@ -6,12 +6,17 @@ import {
 } from '@ngneat/transloco';
 import { Language } from '../models/language.model';
 import { SUPPORTED_LANGUAGES } from '../models/supported-languages';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TranslationService {
   constructor(private translocoService: TranslocoService) {}
+
+  getLanguageChangesObservable$() {
+    return this.translocoService.langChanges$;
+  }
 
   getAvailableLanguages(): Language[] {
     return SUPPORTED_LANGUAGES;
