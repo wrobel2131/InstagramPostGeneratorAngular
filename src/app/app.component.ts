@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { slider } from './route-animations';
+import { TranslationService } from './services/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,13 @@ import { slider } from './route-animations';
   styleUrls: ['./app.component.scss'],
   animations: [slider],
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  constructor(private translationService: TranslationService) {}
+
+  ngOnInit(): void {
+    this.translationService.setDefaultLanguage();
+  }
+
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet &&

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { MatSelectChange, MatSelectModule } from '@angular/material/select';
+import { TranslationService } from '../../services/translation.service';
+import { AvailableLangs } from '@ngneat/transloco';
 
 interface Language {
   name: string;
@@ -14,17 +16,27 @@ interface Language {
   templateUrl: './pick-language-menu.component.html',
   styleUrl: './pick-language-menu.component.scss',
 })
-export class PickLanguageMenuComponent {
-  languages: Language[] = [
-    {
-      name: 'Polish',
-      icon: '🇵🇱',
-    },
-    {
-      name: 'English',
-      icon: '🇬🇧',
-    },
-  ];
+export class PickLanguageMenuComponent implements OnInit{
+  constructor(private translationService: TranslationService) {
 
-  selected = this.languages[0];
+  }
+
+  languages!: AvailableLangs;
+
+  selected!: string;
+
+  ngOnInit(): void {
+    this.languages = this.translationService.getAvailableLanguages();
+    this.selected = this.translationService.getActiveLanguage();
+  }
+
+  
+
+  changeLang(event: MatSelectChange) {
+    this.translationService.changeActiveLanguage(event.value)
+    console.log(this.translationService.getActiveLanguage())
+    // console.log(event)
+  }
+
+ 
 }

@@ -1,8 +1,8 @@
 <mat-form-field class="language-picker">
-  <mat-select [(value)]="selected.name">
+  <mat-select [(value)]="selected" (selectionChange)="changeLang($event)">
     @for (language of languages; track $index) {
-    <mat-option [value]="language.name">
-      {{ language.icon }}
+    <mat-option [value]="language">
+      {{ language }}
     </mat-option>
     }
   </mat-select>

@@ -14,4 +14,30 @@ export class TranslationService {
   getAvailableLanguages(): AvailableLangs {
     return this.translocoService.getAvailableLangs();
   }
+
+  getActiveLanguage(): string {
+    return this.translocoService.getActiveLang()
+  }
+
+  setDefaultLanguage() {
+    let currentLanguage = localStorage.getItem("lang");
+    if (currentLanguage && this.checkIfLanguageAvailable(currentLanguage)) {
+      this.translocoService.setActiveLang(currentLanguage);
+    } else {
+      let defaultLang = this.translocoService.getDefaultLang();
+      localStorage.setItem("lang", defaultLang)
+      this.translocoService.setDefaultLang(defaultLang);
+    }
+  }
+
+  changeActiveLanguage(language: string): void {
+    localStorage.setItem("lang", language)
+    this.translocoService.setActiveLang(language);
+  }
+
+  checkIfLanguageAvailable(language: string) {
+    return (this.getAvailableLanguages() as string[]).includes(language);
+  }
+
+
 }
