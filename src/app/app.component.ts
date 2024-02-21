@@ -12,7 +12,7 @@ import { TranslationService } from './services/translation.service';
   styleUrls: ['./app.component.scss'],
   animations: [slider],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {

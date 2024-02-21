@@ -24,7 +24,10 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/flag-icons/sass/flag-icons.scss"
+            ],
             "stylePreprocessorOptions": {
               "includePaths": ["src/app/styles"]
             },
@@ -49,7 +52,8 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "outputHashing": "media"
             }
           },
           "defaultConfiguration": "production"

@@ -1,8 +1,13 @@
 <mat-form-field class="language-picker">
   <mat-select [(value)]="selected" (selectionChange)="changeLang($event)">
+    <mat-select-trigger>
+      @if (selected) {
+      <span [class]="getFlagClass(selected.code)"></span>
+      }
+    </mat-select-trigger>
     @for (language of languages; track $index) {
     <mat-option [value]="language">
-      {{ language }}
+      <span [class]="getFlagClass(language.code)"></span>
     </mat-option>
     }
   </mat-select>

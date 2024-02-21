@@ -6,6 +6,10 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@ngneat/transloco';
+import {
+  DEFAULT_LANGUAGE,
+  SUPPORTED_LANGUAGES,
+} from './models/supported-languages';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,8 +18,8 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideTransloco({
       config: {
-        availableLangs: ['en', 'pl'],
-        defaultLang: 'en',
+        availableLangs: SUPPORTED_LANGUAGES.map((language) => language.code),
+        defaultLang: DEFAULT_LANGUAGE.code,
         reRenderOnLangChange: true,
         prodMode: !isDevMode(),
       },

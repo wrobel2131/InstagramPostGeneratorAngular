@@ -4,6 +4,8 @@ import {
   LangDefinition,
   TranslocoService,
 } from '@ngneat/transloco';
+import { Language } from '../models/language.model';
+import { SUPPORTED_LANGUAGES } from '../models/supported-languages';
 
 @Injectable({
   providedIn: 'root',
@@ -11,33 +13,41 @@ import {
 export class TranslationService {
   constructor(private translocoService: TranslocoService) {}
 
-  getAvailableLanguages(): AvailableLangs {
-    return this.translocoService.getAvailableLangs();
+  getAvailableLanguages(): Language[] {
+    return SUPPORTED_LANGUAGES;
   }
 
-  getActiveLanguage(): string {
-    return this.translocoService.getActiveLang()
+  getActiveLanguage(): Language {
+    let activeLang = this.getAvailableLanguages().find(
+      (lang) => lang.code === this.translocoService.getActiveLang()
+    );
+    if (!activeLang) {
+      return this.getAvailableLanguages().find(
+        (language) => language.code === this.translocoService.getDefaultLang()
+      )!;
+    }
+    return activeLang;
   }
 
   setDefaultLanguage() {
-    let currentLanguage = localStorage.getItem("lang");
+    let currentLanguage = localStorage.getItem('lang');
     if (currentLanguage && this.checkIfLanguageAvailable(currentLanguage)) {
       this.translocoService.setActiveLang(currentLanguage);
     } else {
       let defaultLang = this.translocoService.getDefaultLang();
-      localStorage.setItem("lang", defaultLang)
+      localStorage.setItem('lang', defaultLang);
       this.translocoService.setDefaultLang(defaultLang);
     }
   }
 
-  changeActiveLanguage(language: string): void {
-    localStorage.setItem("lang", language)
-    this.translocoService.setActiveLang(language);
+  changeActiveLanguage(language: Language): void {
+    localStorage.setItem('lang', language.code);
+    this.translocoService.setActiveLang(language.code);
   }
 
-  checkIfLanguageAvailable(language: string) {
-    return (this.getAvailableLanguages() as string[]).includes(language);
+  private checkIfLanguageAvailable(languageCode: string) {
+    return (
+      this.getAvailableLanguages().map((lang) => lang.code) as string[]
+    ).includes(languageCode);
   }
-
-
 }

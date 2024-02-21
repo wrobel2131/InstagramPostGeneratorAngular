@@ -3,7 +3,6 @@
 @use "@angular/material" as mat;
 @include mat.core();
 
-
 $instagram-post-generator-angular-primary: mat.define-palette(
   mat.$purple-palette
 );
