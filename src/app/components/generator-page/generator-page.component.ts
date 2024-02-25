@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
@@ -22,7 +22,7 @@ import { TranslocoModule } from '@ngneat/transloco';
   styleUrl: './generator-page.component.scss',
 })
 export class GeneratorPageComponent {
-  constructor(private router: Router) {}
+  router = inject(Router);
   generate() {
     this.router.navigate(['dashboard', { outlets: { main: ['displayed'] } }]);
   }

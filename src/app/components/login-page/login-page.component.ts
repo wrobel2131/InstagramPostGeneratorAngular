@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BrandSectionComponent } from '../brand-section/brand-section.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleLoginButtonComponent } from '../google-login-button/google-login-button.component';
@@ -37,11 +37,8 @@ import { UserCredentials } from '../../models/mocked-data';
   styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent {
-  constructor(
-    private router: Router,
-    private formBuilder: FormBuilder,
-    private apiService: ApiService
-  ) {}
+  formBuilder = inject(FormBuilder);
+  apiService = inject(ApiService);
 
   loginForm = this.formBuilder.group({
     login: ['', Validators.required],

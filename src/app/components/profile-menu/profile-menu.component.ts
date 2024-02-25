@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { Router, RouterModule } from '@angular/router';
@@ -19,9 +19,9 @@ import { TranslocoModule } from '@ngneat/transloco';
   styleUrl: './profile-menu.component.scss',
 })
 export class ProfileMenuComponent {
-  constructor(private router: Router) {}
+  router = inject(Router);
+
   logout() {
-    // alert('logout button');
     this.router.navigate(['']);
   }
 

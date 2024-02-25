@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { slider } from './route-animations';
@@ -13,7 +13,7 @@ import { TranslationService } from './services/translation.service';
   animations: [slider],
 })
 export class AppComponent implements OnInit {
-  constructor(private translationService: TranslationService) {}
+  translationService = inject(TranslationService);
 
   ngOnInit(): void {
     this.translationService.setDefaultLanguage();

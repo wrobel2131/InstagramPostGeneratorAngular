@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { GalleryPostElementComponent } from '../gallery-post-element/gallery-post-element.component';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './gallery-page.component.scss',
 })
 export class GalleryPageComponent {
-  constructor(private router: Router) {}
+  router = inject(Router);
 
   display() {
     this.router.navigate(['dashboard', { outlets: { main: ['displayed'] } }]);

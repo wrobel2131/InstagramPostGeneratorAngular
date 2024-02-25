@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { USERS_MOCK, UserCredentials } from '../models/mocked-data';
 import { throwError } from 'rxjs';
 import { UserDataService } from './user-data.service';
@@ -9,11 +9,9 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class ApiService {
-  constructor(
-    private http: HttpClient,
-    private userDataService: UserDataService,
-    private router: Router
-  ) {}
+  http = inject(HttpClient);
+  userDataService = inject(UserDataService);
+  router = inject(Router);
 
   login(userCredentials: UserCredentials): void {
     const user = USERS_MOCK.find(
@@ -27,9 +25,5 @@ export class ApiService {
     } else {
       this.userDataService.setIsAuthenticated(false);
     }
-
-    // user
-    //   ? this.userDataService.setIsAuthenticated(true)
-    //   : this.userDataService.setIsAuthenticated(false);
   }
 }

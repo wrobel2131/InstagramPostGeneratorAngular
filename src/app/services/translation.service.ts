@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
 import { Language } from '../models/language.model';
 import { SUPPORTED_LANGUAGES } from '../models/supported-languages';
@@ -7,7 +7,7 @@ import { SUPPORTED_LANGUAGES } from '../models/supported-languages';
   providedIn: 'root',
 })
 export class TranslationService {
-  constructor(private translocoService: TranslocoService) {}
+  translocoService = inject(TranslocoService);
 
   getLanguageChangesObservable$() {
     return this.translocoService.langChanges$;

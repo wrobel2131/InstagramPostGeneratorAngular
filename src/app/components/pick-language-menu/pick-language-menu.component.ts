@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { TranslationService } from '../../services/translation.service';
@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './pick-language-menu.component.scss',
 })
 export class PickLanguageMenuComponent implements OnInit, OnDestroy {
-  constructor(private translationService: TranslationService) {}
+  translationService = inject(TranslationService);
 
   languages!: Language[];
   currentLanguage!: Language;
