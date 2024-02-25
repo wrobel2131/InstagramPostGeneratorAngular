@@ -6,27 +6,36 @@ import { AuthenticatedLayoutComponent } from './components/authenticated-layout/
 import { GeneratorPageComponent } from './components/generator-page/generator-page.component';
 import { GalleryPageComponent } from './components/gallery-page/gallery-page.component';
 import { SettingPageComponent } from './components/settings-page/settings-page.component';
-import { GeneratedPostComponent } from './components/generated-post/generated-post.component';
 import { DisplayedPostComponent } from './components/displayed-post/displayed-post.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    component: LandingPageComponent,
+    loadComponent: () =>
+      import('./components/landing-page/landing-page.component').then(
+        (c) => c.LandingPageComponent
+      ),
     data: {
       animation: 'down',
     },
   },
   {
     path: 'signin',
-    component: LoginPageComponent,
+    loadComponent: () =>
+      import('./components/login-page/login-page.component').then(
+        (c) => c.LoginPageComponent
+      ),
     data: {
       animation: 'left',
     },
   },
   {
     path: 'signup',
-    component: RegisterPageComponent,
+    loadComponent: () =>
+      import('./components/register-page/register-page.component').then(
+        (c) => c.RegisterPageComponent
+      ),
     data: {
       animation: 'right',
     },
@@ -34,33 +43,12 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: AuthenticatedLayoutComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
+    loadChildren: () =>
+      import('./authenticated.routes').then((r) => r.authenticatedRoutes),
     data: {
       animation: 'right',
     },
-    children: [
-      {
-        path: '',
-        redirectTo: 'generator',
-        pathMatch: 'full',
-      },
-      {
-        path: 'generator',
-        component: GeneratorPageComponent,
-      },
-      {
-        path: 'gallery',
-        component: GalleryPageComponent,
-      },
-      {
-        path: 'settings',
-        component: SettingPageComponent,
-        outlet: 'main'
-      },
-      {
-        path: 'displayed',
-        component: DisplayedPostComponent,
-        outlet: 'main'
-      },
-    ],
   },
 ];

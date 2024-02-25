@@ -8,6 +8,14 @@ import { LogoComponent } from '../logo/logo.component';
 import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
 import { TranslocoModule } from '@ngneat/transloco';
 import { PickLanguageMenuComponent } from '../pick-language-menu/pick-language-menu.component';
+import { ApiService } from '../../services/api.service';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { UserCredentials } from '../../models/mocked-data';
 
 @Component({
   selector: 'app-login-page',
@@ -23,18 +31,37 @@ import { PickLanguageMenuComponent } from '../pick-language-menu/pick-language-m
     RouterLink,
     RouterModule,
     TranslocoModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private apiService: ApiService
+  ) {}
 
-  forgotPassword() {
+  loginForm = this.formBuilder.group({
+    login: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+
+  forgotPassword(): void {
     alert('forgot password alert');
   }
 
-  onLogin() {
-    this.router.navigate(['/dashboard/generator']);
+  login(): void {
+    if (this.loginForm.valid) {
+      this.apiService.login(this.userCredentials);
+    }
+  }
+
+  private get userCredentials(): UserCredentials {
+    return {
+      login: this.loginForm.controls.login.value!,
+      password: this.loginForm.controls.password.value!,
+    };
   }
 }

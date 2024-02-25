@@ -11,7 +11,7 @@
 
 <section class="form-container">
   <h1 class="welcome-text">{{ "loginPage.form.greetings" | transloco }}</h1>
-  <form class="form">
+  <form class="form" [formGroup]="loginForm">
     <div class="form__controls">
       <div class="form__control">
         <label for="login" class="form__control--label">{{
@@ -22,6 +22,7 @@
           type="text"
           name="login"
           id="login"
+          formControlName="login"
         />
       </div>
       <div class="form__control">
@@ -33,9 +34,10 @@
           type="password"
           name="password"
           id="password"
+          formControlName="password"
         />
       </div>
-      <a class="button" type="submit" (click)="onLogin()">{{
+      <a class="button" type="submit" (click)="login()">{{
         "loginPage.form.signIn" | transloco
       }}</a>
     </div>

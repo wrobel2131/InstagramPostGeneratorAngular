@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { routes } from '../../app.routes';
 import { TranslocoModule } from '@ngneat/transloco';
 import { PickLanguageMenuComponent } from '../pick-language-menu/pick-language-menu.component';
+import { authenticatedRoutes } from '../../authenticated.routes';
 
 @Component({
   selector: 'app-authenticated-layout-side-panel',
@@ -37,13 +38,9 @@ export class AuthenticatedLayoutSidePanelComponent implements OnInit {
   }
 
   getDashboardLinks(): Route[] {
-    return (
-      routes
-        .find((route) => route.path === 'dashboard')
-        ?.children?.filter(
-          (child) =>
-            child.path !== '' && ['gallery', 'generator'].includes(child.path!)
-        ) || []
+    return authenticatedRoutes.filter(
+      (route) =>
+        route.path !== '' && ['gallery', 'generator'].includes(route.path!)
     );
   }
 }
