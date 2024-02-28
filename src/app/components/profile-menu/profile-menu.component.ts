@@ -21,11 +21,7 @@ import { TranslocoModule } from '@ngneat/transloco';
 export class ProfileMenuComponent {
   router = inject(Router);
 
-  logout() {
+  onLogout() {
     this.router.navigate(['']);
-  }
-
-  settings() {
-    alert('settings button');
   }
 }

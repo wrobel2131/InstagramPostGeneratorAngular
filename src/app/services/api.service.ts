@@ -1,31 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { map, throwError } from 'rxjs';
-import { UserDataService } from './user-data.service';
-import { Router } from '@angular/router';
-import { UserCredentials } from '../models/mocked-data';
+import { User } from '../models/user.model';
+import { Observable } from 'rxjs';
+import { InstagramPost } from '../models/instagram-post.model';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   http = inject(HttpClient);
-  userDataService = inject(UserDataService);
-  router = inject(Router);
 
-  login(credentials: UserCredentials) {
-    console.log('login endpoint');
-    return this.http.post<any>('api/login', credentials).pipe(
-      map((user) => {
-        console.log('map');
-        console.log(user);
-        if (user) {
-          console.log('authenticated');
-          this.userDataService.setIsAuthenticated(true);
-          this.router.navigate(['/dashboard']);
-        }
-        return user;
-      })
-    );
+  getUser(userId: number): Observable<User> {
+    console.log("getUser endpoint");
+    return this.http.get<User>('api/users/' + userId);
+  }
+
+  getPosts(): Observable<InstagramPost[]> {
+    console.log("getPosts endpoints")
+    return this.http.get<InstagramPost[]>('api/posts/')
+  }
+
+  getPost(postId: number): Observable<InstagramPost> {
+    console.log("getPost endpoint")
+    return this.http.get<InstagramPost>('api/posts/' + postId);
   }
 }

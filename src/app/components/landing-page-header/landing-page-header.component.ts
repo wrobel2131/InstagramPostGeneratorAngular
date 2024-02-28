@@ -31,7 +31,7 @@ export class LandingPageHeaderComponent {
   logoHeight = '120px';
   isMenuExpanded = false;
 
-  changeMobileMenuState() {
+  onChangeMobileMenuState() {
     return (this.isMenuExpanded = !this.isMenuExpanded);
   }
 }

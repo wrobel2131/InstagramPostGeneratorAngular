@@ -7,7 +7,8 @@ import {
   STATUS,
 } from 'angular-in-memory-web-api';
 import { Observable } from 'rxjs';
-import { InMemoryDb, UserCredentials } from '../models/mocked-data';
+import { InMemoryDb, UserDb } from '../models/mocked-data';
+import { User, UserLoginCredentials } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -152,22 +153,24 @@ export class InMemoryDataService implements InMemoryDbService {
     // Extract the users collection from the in-memory database
     const db = reqInfo.utils.getDb() as InMemoryDb;
     const users = db.users;
-    console.log('users: ' + users);
 
     // Extract the login credentials from the request body
-    const credentials: UserCredentials = reqInfo.utils.getJsonBody(reqInfo.req);
+    const credentials: UserLoginCredentials = reqInfo.utils.getJsonBody(reqInfo.req);
 
     // Find the user
     const user = users.find(
-      (u: any) =>
+      (u: UserDb) =>
         u.login === credentials.login && u.password === credentials.password
     );
-    console.log('User found: ' + user);
 
     if (user) {
       return reqInfo.utils.createResponse$(() => {
         return {
-          body: { ...user, password: undefined }, // Do not return the password
+          body: {
+            accessToken: 'access token',
+            refreshToken: 'refresh_token',
+            userId: user.id
+          },
           status: STATUS.OK,
         };
       });

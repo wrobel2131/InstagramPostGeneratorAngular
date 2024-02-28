@@ -29,7 +29,7 @@ export class PickLanguageMenuComponent implements OnInit, OnDestroy {
       );
   }
 
-  changeLang(event: MatSelectChange) {
+  onChangeLanguage(event: MatSelectChange) {
     this.translationService.changeActiveLanguage(event.value);
   }
 

@@ -1,26 +1,43 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from '../models/mocked-data';
+import { User, UserLoginCredentials } from '../models/user.model';
+import { AuthService } from './auth.service';
+import { ApiService } from './api.service';
+import { AuthenticationResponse } from '../models/authentication-response.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserDataService {
-  private readonly authenticatedUserSubject = new BehaviorSubject<User | null>(
-    null
-  );
-  public readonly authenticatedUser$: Observable<User | null> =
-    this.authenticatedUserSubject.asObservable();
+  authService = inject(AuthService);
+  apiService = inject(ApiService);
+  router = inject(Router);
 
-  private readonly isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
-  public readonly isAuthenticated$: Observable<boolean> =
-    this.isAuthenticatedSubject.asObservable();
+  isAuthenticated = signal<boolean>(false);
 
   setIsAuthenticated(isAuthenticated: boolean): void {
-    this.isAuthenticatedSubject.next(isAuthenticated);
+    this.isAuthenticated.set(isAuthenticated);
   }
 
-  setAuthenticatedUser(authenticatedUser: User): void {
-    this.authenticatedUserSubject.next(authenticatedUser);
+  
+
+  login(userLoginCredentials: UserLoginCredentials): void {
+    this.authService.login(userLoginCredentials).subscribe((response) => {
+      this.authService.setLocalStorage(response);
+      this.setIsAuthenticated(true);
+      this.router.navigate(['/dashboard'])
+    })
   }
+
+  logout(): void {
+    this.setIsAuthenticated(false);
+  }
+
+
+  
+
+  
+
+
 }

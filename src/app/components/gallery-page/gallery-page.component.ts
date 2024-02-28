@@ -12,7 +12,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 export class GalleryPageComponent {
   router = inject(Router);
 
-  display() {
+  onDisplayPost() {
     this.router.navigate(['dashboard', { outlets: { main: ['displayed'] } }]);
   }
 }

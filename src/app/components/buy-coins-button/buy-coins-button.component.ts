@@ -9,7 +9,7 @@ import { TranslocoModule } from '@ngneat/transloco';
   styleUrl: './buy-coins-button.component.scss',
 })
 export class BuyCoinsButtonComponent {
-  buyCoins() {
+  onBuyCoins() {
     alert('buy coins button');
   }
 }

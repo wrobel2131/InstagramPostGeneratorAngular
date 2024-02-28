@@ -1,27 +1,12 @@
 /*Models (in future, they will be in separated files) */
 
-export interface User {
-  id: number;
-  email: string;
-  login: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  coins: number;
-}
+import { InstagramPost } from "./instagram-post.model";
+import { User } from "./user.model";
 
-export type UserCredentials = Pick<User, 'login'> & { password: string };
-
-export interface InstagramPost {
-  id: number;
-  userId: number;
-  title: string;
-  imageUrl: string;
-  description: string;
-}
+export type UserDb = User & {password: string}
+export type InstagramPostDb = InstagramPost;
 
 export interface InMemoryDb {
-  users: User[];
-  posts: InstagramPost[]; // Use your User interface here
-  // ... any other collections
+  users: UserDb[];
+  posts: InstagramPostDb[];
 }

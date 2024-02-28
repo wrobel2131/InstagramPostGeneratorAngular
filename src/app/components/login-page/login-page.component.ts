@@ -3,19 +3,20 @@ import { BrandSectionComponent } from '../brand-section/brand-section.component'
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleLoginButtonComponent } from '../google-login-button/google-login-button.component';
 import { GithubLoginButtonComponent } from '../github-login-button/github-login-button.component';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
 import { MobileFooterDarkComponent } from '../mobile-footer-dark/mobile-footer-dark.component';
 import { TranslocoModule } from '@ngneat/transloco';
 import { PickLanguageMenuComponent } from '../pick-language-menu/pick-language-menu.component';
-import { ApiService } from '../../services/api.service';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { UserCredentials } from '../../models/mocked-data';
+import { AuthService } from '../../services/auth.service';
+import { UserLoginCredentials } from '../../models/user.model';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-login-page',
@@ -38,24 +39,24 @@ import { UserCredentials } from '../../models/mocked-data';
 })
 export class LoginPageComponent {
   formBuilder = inject(FormBuilder);
-  apiService = inject(ApiService);
+  userDataService = inject(UserDataService);
 
   loginForm = this.formBuilder.group({
     login: ['', Validators.required],
     password: ['', Validators.required],
   });
 
-  forgotPassword(): void {
+  onForgotPassword(): void {
     alert('forgot password alert');
   }
 
-  login(): void {
+  onLogin(): void {
     if (this.loginForm.valid) {
-      this.apiService.login(this.userCredentials).subscribe();
+      this.userDataService.login(this.userLoginCredentials);
     }
   }
 
-  private get userCredentials(): UserCredentials {
+  private get userLoginCredentials(): UserLoginCredentials {
     return {
       login: this.loginForm.controls.login.value!,
       password: this.loginForm.controls.password.value!,

@@ -37,7 +37,7 @@ export class AuthenticatedLayoutSidePanelComponent implements OnInit {
     this.links = this.getDashboardLinks();
   }
 
-  getDashboardLinks(): Route[] {
+  private getDashboardLinks(): Route[] {
     return authenticatedRoutes.filter(
       (route) =>
         route.path !== '' && ['gallery', 'generator'].includes(route.path!)

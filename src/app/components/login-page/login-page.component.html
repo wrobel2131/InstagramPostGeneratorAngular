@@ -37,7 +37,7 @@
           formControlName="password"
         />
       </div>
-      <a class="button" type="submit" (click)="login()">{{
+      <a class="button" type="submit" (click)="onLogin()">{{
         "loginPage.form.signIn" | transloco
       }}</a>
     </div>
@@ -45,7 +45,7 @@
     <div class="form__buttons">
       <p class="text--bold">
         {{ "loginPage.form.forgotPassword" | transloco }}
-        <span class="text--bold text--purple" (click)="forgotPassword()">{{
+        <span class="text--bold text--purple" (click)="onForgotPassword()">{{
           "loginPage.form.clickHere" | transloco
         }}</span>
       </p>
