@@ -32,7 +32,9 @@ export const appConfig: ApplicationConfig = {
       loader: TranslocoHttpLoader,
     }),
     importProvidersFrom(
-      HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+      HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+        passThruUnknownUrl: true,
+      })
     ),
   ],
 };

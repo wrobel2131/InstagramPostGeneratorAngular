@@ -51,7 +51,7 @@ export class LoginPageComponent {
 
   login(): void {
     if (this.loginForm.valid) {
-      this.apiService.login(this.userCredentials);
+      this.apiService.login(this.userCredentials).subscribe();
     }
   }
 

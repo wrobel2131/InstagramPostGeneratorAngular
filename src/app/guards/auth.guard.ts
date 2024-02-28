@@ -9,7 +9,7 @@ export const AuthGuard: CanActivateFn = (route, state) => {
   return userDataService.isAuthenticated$.pipe(
     take(1),
     map((isAuthenticated) => {
-      console.log(isAuthenticated);
+      console.log('isAuthenticated guard : ' + isAuthenticated);
       return isAuthenticated ? true : router.createUrlTree(['/signin']);
     })
   );
