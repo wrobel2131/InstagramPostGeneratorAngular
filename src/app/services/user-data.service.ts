@@ -10,9 +10,8 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class UserDataService {
-  authService = inject(AuthService);
-  apiService = inject(ApiService);
-  router = inject(Router);
+  private authService: AuthService = inject(AuthService);
+  private router: Router = inject(Router);
 
   isAuthenticated = signal<boolean>(false);
 
@@ -20,24 +19,15 @@ export class UserDataService {
     this.isAuthenticated.set(isAuthenticated);
   }
 
-  
-
   login(userLoginCredentials: UserLoginCredentials): void {
     this.authService.login(userLoginCredentials).subscribe((response) => {
       this.authService.setLocalStorage(response);
       this.setIsAuthenticated(true);
-      this.router.navigate(['/dashboard'])
-    })
+      this.router.navigate(['/dashboard']);
+    });
   }
 
   logout(): void {
     this.setIsAuthenticated(false);
   }
-
-
-  
-
-  
-
-
 }

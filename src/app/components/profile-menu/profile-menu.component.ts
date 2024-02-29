@@ -19,7 +19,7 @@ import { TranslocoModule } from '@ngneat/transloco';
   styleUrl: './profile-menu.component.scss',
 })
 export class ProfileMenuComponent {
-  router = inject(Router);
+  private router: Router = inject(Router);
 
   onLogout() {
     this.router.navigate(['']);

@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './pick-language-menu.component.scss',
 })
 export class PickLanguageMenuComponent implements OnInit, OnDestroy {
-  translationService = inject(TranslationService);
+  private translationService: TranslationService = inject(TranslationService);
 
   languages!: Language[];
   currentLanguage!: Language;

@@ -24,18 +24,18 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrl: './register-page.component.scss',
 })
 export class RegisterPageComponent {
-  formBuilder = inject(FormBuilder);
+  private formBuilder: FormBuilder = inject(FormBuilder);
 
   registerForm = this.formBuilder.group({
     email: ['', Validators.required],
     login: ['', Validators.required],
     password: ['', Validators.required],
-    confirmPassword: ['', Validators.required]
-  })
+    confirmPassword: ['', Validators.required],
+  });
 
   onRegister(): void {
-    if(this.registerForm.valid) {
-      console.log(this.registerForm.value)
+    if (this.registerForm.valid) {
+      console.log(this.registerForm.value);
     }
   }
 }

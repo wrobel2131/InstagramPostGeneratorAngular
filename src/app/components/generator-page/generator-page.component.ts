@@ -22,7 +22,8 @@ import { TranslocoModule } from '@ngneat/transloco';
   styleUrl: './generator-page.component.scss',
 })
 export class GeneratorPageComponent {
-  router = inject(Router);
+  private router: Router = inject(Router);
+
   onGeneratePost() {
     this.router.navigate(['dashboard', { outlets: { main: ['displayed'] } }]);
   }

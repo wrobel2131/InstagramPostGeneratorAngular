@@ -7,7 +7,7 @@ import { SUPPORTED_LANGUAGES } from '../models/supported-languages';
   providedIn: 'root',
 })
 export class TranslationService {
-  translocoService = inject(TranslocoService);
+  private translocoService: TranslocoService = inject(TranslocoService);
 
   getLanguageChangesObservable$() {
     return this.translocoService.langChanges$;

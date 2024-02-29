@@ -13,7 +13,7 @@ import { TranslationService } from './services/translation.service';
   animations: [slider],
 })
 export class AppComponent implements OnInit {
-  translationService = inject(TranslationService);
+  private translationService: TranslationService = inject(TranslationService);
 
   ngOnInit(): void {
     this.translationService.setDefaultLanguage();

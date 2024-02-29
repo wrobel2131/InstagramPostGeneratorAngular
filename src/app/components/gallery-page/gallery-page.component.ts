@@ -10,7 +10,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './gallery-page.component.scss',
 })
 export class GalleryPageComponent {
-  router = inject(Router);
+  private router: Router = inject(Router);
 
   onDisplayPost() {
     this.router.navigate(['dashboard', { outlets: { main: ['displayed'] } }]);
