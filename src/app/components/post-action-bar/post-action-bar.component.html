@@ -1,4 +1,9 @@
-<p class="post__name">{{ "displayedPost.postName" | transloco }}</p>
+<!-- <p class="post__name">{{ "displayedPost.postName" | transloco }}</p> -->
+<input
+  type="text"
+  class="post__title"
+  [placeholder]="post ? post.title : ('displayedPost.postName' | transloco)"
+/>
 <div class="post__actions">
   <i class="fa-solid fa-copy fa-xl" style="color: #000000"></i>
   <i class="fa-solid fa-trash fa-xl" style="color: #000000"></i>

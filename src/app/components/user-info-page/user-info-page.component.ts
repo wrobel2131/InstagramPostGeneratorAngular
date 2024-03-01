@@ -52,15 +52,13 @@ export class UserInfoPageComponent {
     }
   }
 
-  private get updateUser(): User {
+  private get updateUser(): UpdateUser {
     return {
       id: this.user()?.id!,
       login: this.userDataForm.controls.login.value!,
       email: this.userDataForm.controls.email.value!,
       firstName: this.userDataForm.controls.firstName.value!,
       lastName: this.userDataForm.controls.lastName.value!,
-      coins: this.user()?.coins!,
-      password: this.user()?.password!,
     };
   }
 }

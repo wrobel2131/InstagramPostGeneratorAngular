@@ -10,7 +10,7 @@
   </div>
 </div>
 <div class="image">
-  <img src="assets/images/post-image-placeholder.png" alt="" />
+  <img src="{{ post?.imageUrl }}" alt="" />
 </div>
 <div class="description">
   <div class="description__icons">
@@ -38,47 +38,6 @@
   </div>
   <p class="description__text">
     <span class="description__text--username">{{ user()?.login }} &nbsp;</span>
-    <span
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-      dolores cupiditate consequatur harum ullam distinctio rerum veritatis
-      quaerat modi illo aliquam ea illum odio saepe beatae in quas, temporibus
-      delectus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
-      inventore voluptate nihil cupiditate sint illo! Reiciendis iure vero
-      dolores laboriosam! Eveniet beatae, itaque voluptatum soluta vitae
-      recusandae dolor aspernatur molestias! Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit. Voluptate repudiandae nihil necessitatibus,
-      quas iusto deserunt sequi cumque exercitationem odio! Repellendus
-      accusamus iste hic ut in quaerat eos repudiandae rerum repellat!LoremLorem
-      ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolores
-      cupiditate consequatur harum ullam distinctio rerum veritatis quaerat modi
-      illo aliquam ea illum odio saepe beatae in quas, temporibus delectus!
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe inventore
-      voluptate nihil cupiditate sint illo! Reiciendis iure vero dolores
-      laboriosam! Eveniet beatae, itaque voluptatum soluta vitae recusandae
-      dolor aspernatur molestias! Lorem ipsum dolor sit amet, consectetur
-      adipisicing elit. Voluptate repudiandae nihil necessitatibus, quas iusto
-      deserunt sequi cumque exercitationem odio! Repellendus accusamus iste hic
-      ut in quaerat eos repudiandae rerum repellat!LoremLorem ipsum dolor sit
-      amet consectetur adipisicing elit. Accusantium dolores cupiditate
-      consequatur harum ullam distinctio rerum veritatis quaerat modi illo
-      aliquam ea illum odio saepe beatae in quas, temporibus delectus! Lorem
-      ipsum dolor sit amet consectetur, adipisicing elit. Saepe inventore
-      voluptate nihil cupiditate sint illo! Reiciendis iure vero dolores
-      laboriosam! Eveniet beatae, itaque voluptatum soluta vitae recusandae
-      dolor aspernatur molestias! Lorem ipsum dolor sit amet, consectetur
-      adipisicing elit. Voluptate repudiandae nihil necessitatibus, quas iusto
-      deserunt sequi cumque exercitationem odio! Repellendus accusamus iste hic
-      ut in quaerat eos repudiandae rerum repellat!LoremLorem ipsum dolor sit
-      amet consectetur adipisicing elit. Accusantium dolores cupiditate
-      consequatur harum ullam distinctio rerum veritatis quaerat modi illo
-      aliquam ea illum odio saepe beatae in quas, temporibus delectus! Lorem
-      ipsum dolor sit amet consectetur, adipisicing elit. Saepe inventore
-      voluptate nihil cupiditate sint illo! Reiciendis iure vero dolores
-      laboriosam! Eveniet beatae, itaque voluptatum soluta vitae recusandae
-      dolor aspernatur molestias! Lorem ipsum dolor sit amet, consectetur
-      adipisicing elit. Voluptate repudiandae nihil necessitatibus, quas iusto
-      deserunt sequi cumque exercitationem odio! Repellendus accusamus iste hic
-      ut in quaerat eos repudiandae rerum repellat!Lorem</span
-    >
+    <span>{{ post?.description }}</span>
   </p>
 </div>

@@ -23,9 +23,9 @@ export class ApiService {
     return this.http.put<void>('api/users/' + updatedUser.id, updatedUser);
   }
 
-  getPosts(): Observable<InstagramPost[]> {
+  getPosts(userId: number): Observable<InstagramPost[]> {
     console.log('getPosts endpoints');
-    return this.http.get<InstagramPost[]>('api/posts/');
+    return this.http.get<InstagramPost[]>('api/posts?userId=' + userId);
   }
 
   getPost(postId: number): Observable<InstagramPost> {

@@ -37,11 +37,16 @@ export class UserDataService {
     )
   );
 
-  // posts = signal<InstagramPost[]>([]);
+  posts = toSignal(
+    toObservable(this.userId).pipe(
+      filter((id): id is number => id !== undefined),
+      switchMap((id) => this.apiService.getPosts(id))
+    )
+  );
 
   // selectedPostId = signal<number>(0);
 
-  // selectedPost = signal<InstagramPost | undefined>(undefined);
+  selectedPost = signal<InstagramPost | undefined>(undefined);
 
   setUserId(userId: number) {
     console.log('Set user id to: ' + userId);
@@ -50,6 +55,11 @@ export class UserDataService {
 
   setIsAuthenticated(isAuthenticated: boolean): void {
     this.isAuthenticated.set(isAuthenticated);
+  }
+  setSelectedPost(post: InstagramPost) {
+    console.log('setting selected pots');
+    console.log(post);
+    this.selectedPost.set(post);
   }
 
   login(userLoginCredentials: UserLoginCredentials): void {
@@ -61,7 +71,7 @@ export class UserDataService {
     });
   }
 
-  updateUser(updatedUser: User) {
+  updateUser(updatedUser: UpdateUser) {
     console.log('update data service');
     this.apiService
       .updateUser(updatedUser)
