@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { User } from '../models/user.model';
-import { Observable } from 'rxjs';
+import { UpdateUser, User } from '../models/user.model';
+import { Observable, map } from 'rxjs';
 import { InstagramPost } from '../models/instagram-post.model';
 
 @Injectable({
@@ -14,6 +14,13 @@ export class ApiService {
     console.log('getUser endpoint');
     console.log(userId);
     return this.http.get<User>('api/users/' + userId);
+  }
+
+  updateUser(updatedUser: UpdateUser): Observable<void> {
+    console.log('updateUSer endpoint');
+    //cos nie zmienia danych
+
+    return this.http.put<void>('api/users/' + updatedUser.id, updatedUser);
   }
 
   getPosts(): Observable<InstagramPost[]> {

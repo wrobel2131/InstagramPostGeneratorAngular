@@ -8,8 +8,8 @@
     <div class="info">
       <p class="username__title">{{ user()?.login }}</p>
       <p class="user">
-        <span class="user__name">Dawid&nbsp;</span
-        ><span class="user__surname">Wróbel</span>
+        <span class="user__name">{{ user()?.firstName }}&nbsp;</span
+        ><span class="user__surname">{{ user()?.lastName }}</span>
       </p>
     </div>
 

@@ -1,10 +1,10 @@
 import { DestroyRef, Injectable, effect, inject, signal } from '@angular/core';
-import { User, UserLoginCredentials } from '../models/user.model';
+import { UpdateUser, User, UserLoginCredentials } from '../models/user.model';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { InstagramPost } from '../models/instagram-post.model';
 import { ApiService } from './api.service';
-import { catchError, filter, of, switchMap } from 'rxjs';
+import { catchError, filter, first, of, switchMap } from 'rxjs';
 import { toSignal, toObservable } from '@angular/core/rxjs-interop';
 
 @Injectable({
@@ -17,13 +17,25 @@ export class UserDataService {
 
   //Needs to be changed to false as defualt
   isAuthenticated = signal<boolean>(true);
+
+  isAuthenticatedEffect = effect(() => {
+    console.log('Auth: ' + this.isAuthenticated());
+    if (!this.isAuthenticated()) {
+      console.log('clear storage');
+      this.authService.clearLocalStorage();
+    }
+  });
+
+  isLoginEditEnabled = signal<boolean>(false);
+
   userId = signal<number | undefined>(undefined);
 
-  user$ = toObservable(this.userId).pipe(
-    filter((id): id is number => id !== undefined),
-    switchMap((id) => this.apiService.getUser(id))
+  user = toSignal(
+    toObservable(this.userId).pipe(
+      filter((id): id is number => id !== undefined),
+      switchMap((id) => this.apiService.getUser(id))
+    )
   );
-  user = toSignal(this.user$);
 
   // posts = signal<InstagramPost[]>([]);
 
@@ -49,10 +61,21 @@ export class UserDataService {
     });
   }
 
+  updateUser(updatedUser: User) {
+    console.log('update data service');
+    this.apiService
+      .updateUser(updatedUser)
+      .pipe(
+        switchMap(() => {
+          return this.apiService.getUser(this.userId()!);
+        })
+      )
+      .subscribe();
+  }
+
   logout(): void {
     console.log('logout in dataService');
     this.setIsAuthenticated(false);
-    this.authService.clearLocalStorage();
     this.router.navigate(['']);
   }
 }

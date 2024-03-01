@@ -1,24 +1,23 @@
-<form class="info">
+<form class="info" [formGroup]="userDataForm">
   <div class="control">
-    <label class="control--label" for="name">{{
-      "profileSettingsPage.userDataSection.userInfoPage.form.nameLabel"
-        | transloco
-    }}</label>
-    <input class="control--input" type="text" name="name" id="name" />
-  </div>
-  <div class="control">
-    <label class="control--label" for="surname">{{
-      "profileSettingsPage.userDataSection.userInfoPage.form.surnameLabel"
-        | transloco
-    }}</label>
-    <input class="control--input" type="text" name="surname" id="surname" />
-  </div>
-  <div class="control">
-    <label class="control--label" for="username">{{
-      "profileSettingsPage.userDataSection.userInfoPage.form.loginLabel"
-        | transloco
-    }}</label>
-    <input class="control--input" type="text" name="username" id="username" />
+    <label
+      class="control--label"
+      for="username"
+      [ngClass]="!isLoginEditEnabled() ? 'label--disabled' : ''"
+      >{{
+        "profileSettingsPage.userDataSection.userInfoPage.form.loginLabel"
+          | transloco
+      }}</label
+    >
+    <input
+      class="control--input"
+      type="text"
+      name="username"
+      id="username"
+      formControlName="login"
+      [placeholder]="user()?.login"
+      [ngClass]="!isLoginEditEnabled() ? 'input--disabled' : ''"
+    />
   </div>
 
   <div class="control">
@@ -26,8 +25,50 @@
       "profileSettingsPage.userDataSection.userInfoPage.form.emailLabel"
         | transloco
     }}</label>
-    <input class="control--input" type="text" name="email" id="email" />
+    <input
+      class="control--input"
+      type="text"
+      name="email"
+      id="email"
+      [placeholder]="user()?.email"
+      formControlName="email"
+    />
   </div>
+  <div class="control">
+    <label class="control--label" for="firstName">{{
+      "profileSettingsPage.userDataSection.userInfoPage.form.firstNameLabel"
+        | transloco
+    }}</label>
+    <input
+      class="control--input"
+      type="text"
+      name="firstName"
+      id="fitstName"
+      [placeholder]="user()?.firstName"
+      formControlName="firstName"
+    />
+  </div>
+  <div class="control">
+    <label class="control--label" for="lastName">{{
+      "profileSettingsPage.userDataSection.userInfoPage.form.lastNameLabel"
+        | transloco
+    }}</label>
+    <input
+      class="control--input"
+      type="text"
+      name="lastName"
+      id="lastName"
+      [placeholder]="user()?.lastName"
+      formControlName="lastName"
+    />
+  </div>
+
+  <button class="upgrade" (click)="onUpgrade()">
+    {{ "profileSettingsPage.userDataSection.userInfoPage.upgrade" | transloco }}
+  </button>
+</form>
+<mat-divider></mat-divider>
+<form class="passwords" [formGroup]="userPasswordsForm">
   <div class="control">
     <label class="control--label" for="password">{{
       "profileSettingsPage.userDataSection.userInfoPage.form.passwordLabel"
@@ -38,6 +79,7 @@
       type="password"
       name="password"
       id="password"
+      formControlName="password"
     />
   </div>
   <div class="control">
@@ -50,9 +92,13 @@
       type="password"
       name="confirm-password"
       id="confirm-password"
+      formControlName="confirmPassword"
     />
   </div>
-  <button class="upgrade">
-    {{ "profileSettingsPage.userDataSection.userInfoPage.upgrade" | transloco }}
+  <button class="upgrade" (click)="onChangePassword()">
+    {{
+      "profileSettingsPage.userDataSection.userInfoPage.changePassword"
+        | transloco
+    }}
   </button>
 </form>

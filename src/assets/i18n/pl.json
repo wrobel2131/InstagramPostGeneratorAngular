@@ -85,14 +85,15 @@
       "userInfoPage": {
         "tab": "Informacje o użytkowniku",
         "form": {
-          "nameLabel": "Imię",
-          "surnameLabel": "Nazwisko",
+          "firstNameLabel": "Imię",
+          "lastNameLabel": "Nazwisko",
           "loginLabel": "Login",
           "emailLabel": "Email",
           "passwordLabel": "Hasło",
           "confirmPasswordLabel": "Potwierdź hasło"
         },
-        "upgrade": "Aktualizuj"
+        "upgrade": "Aktualizuj",
+        "changePassword": "Zmień hasło"
       },
       "billingInfoPage": {
         "tab": "Informacje o płatnościach"

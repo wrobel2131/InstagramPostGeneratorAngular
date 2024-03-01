@@ -9,12 +9,13 @@ import {
 import { Observable } from 'rxjs';
 import { InMemoryDb, UserDb } from '../models/mocked-data';
 import { User, UserLoginCredentials } from '../models/user.model';
+import { InstagramPost } from '../models/instagram-post.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
-  createDb() {
+  createDb(): InMemoryDb {
     return {
       users: [
         {
@@ -62,7 +63,7 @@ export class InMemoryDataService implements InMemoryDbService {
           password: 'user5',
           coins: 0,
         },
-      ],
+      ] as User[],
       posts: [
         {
           id: 1,
@@ -136,7 +137,7 @@ export class InMemoryDataService implements InMemoryDbService {
           description:
             'Reflections of Serenity captures the tranquil beauty of a still lake, its surface a perfect mirror to the world above. Surrounded by lush greenery, the water reflects the skys ever-changing moods, from the fiery hues of dawn to the soft pastels of dusk. The gentle lapping of the water whispers tales of peace and stillness, inviting the soul to pause and bask in the moment. This serene setting is a sanctuary for contemplation, a place where one can connect with nature and find inner harmony.',
         },
-      ],
+      ] as InstagramPost[],
     };
   }
 
@@ -155,7 +156,9 @@ export class InMemoryDataService implements InMemoryDbService {
     const users = db.users;
 
     // Extract the login credentials from the request body
-    const credentials: UserLoginCredentials = reqInfo.utils.getJsonBody(reqInfo.req);
+    const credentials: UserLoginCredentials = reqInfo.utils.getJsonBody(
+      reqInfo.req
+    );
 
     // Find the user
     const user = users.find(
@@ -169,7 +172,7 @@ export class InMemoryDataService implements InMemoryDbService {
           body: {
             accessToken: 'access token',
             refreshToken: 'refresh_token',
-            userId: user.id
+            userId: user.id,
           },
           status: STATUS.OK,
         };
