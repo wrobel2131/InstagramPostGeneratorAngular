@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 import { MatDividerModule } from '@angular/material/divider';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { TranslocoModule } from '@ngneat/transloco';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-profile-menu',
@@ -19,9 +20,12 @@ import { TranslocoModule } from '@ngneat/transloco';
   styleUrl: './profile-menu.component.scss',
 })
 export class ProfileMenuComponent {
-  private router: Router = inject(Router);
+  private userDataService: UserDataService = inject(UserDataService);
+
+  user = this.userDataService.user;
 
   onLogout() {
-    this.router.navigate(['']);
+    console.log('component logout');
+    this.userDataService.logout();
   }
 }

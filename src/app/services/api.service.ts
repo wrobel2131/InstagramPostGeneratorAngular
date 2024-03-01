@@ -12,6 +12,7 @@ export class ApiService {
 
   getUser(userId: number): Observable<User> {
     console.log('getUser endpoint');
+    console.log(userId);
     return this.http.get<User>('api/users/' + userId);
   }
 

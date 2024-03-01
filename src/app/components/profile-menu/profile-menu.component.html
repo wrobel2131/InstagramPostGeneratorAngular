@@ -6,7 +6,7 @@
 <ng-template #menu>
   <div class="menu" cdkMenu>
     <div class="info">
-      <p class="username__title">USERNAME</p>
+      <p class="username__title">{{ user()?.login }}</p>
       <p class="user">
         <span class="user__name">Dawid&nbsp;</span
         ><span class="user__surname">Wróbel</span>

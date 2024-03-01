@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslocoModule } from '@ngneat/transloco';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-manage-user-picture',
@@ -8,4 +9,8 @@ import { TranslocoModule } from '@ngneat/transloco';
   templateUrl: './manage-user-picture.component.html',
   styleUrl: './manage-user-picture.component.scss',
 })
-export class ManageUserPictureComponent {}
+export class ManageUserPictureComponent {
+  private userDataService: UserDataService = inject(UserDataService);
+
+  user = this.userDataService.user;
+}

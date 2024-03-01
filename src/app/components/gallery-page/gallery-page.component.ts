@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { GalleryPostElementComponent } from '../gallery-post-element/gallery-post-element.component';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-gallery-page',
@@ -11,6 +12,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 })
 export class GalleryPageComponent {
   private router: Router = inject(Router);
+  private userDataService: UserDataService = inject(UserDataService);
 
   onDisplayPost() {
     this.router.navigate(['dashboard', { outlets: { main: ['displayed'] } }]);

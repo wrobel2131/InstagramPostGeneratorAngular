@@ -38,8 +38,8 @@ import { UserDataService } from '../../services/user-data.service';
   styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent {
-  formBuilder = inject(FormBuilder);
-  userDataService = inject(UserDataService);
+  private formBuilder: FormBuilder = inject(FormBuilder);
+  private userDataService: UserDataService = inject(UserDataService);
 
   loginForm = this.formBuilder.group({
     login: ['', Validators.required],
