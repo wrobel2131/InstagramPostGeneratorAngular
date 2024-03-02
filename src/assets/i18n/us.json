@@ -65,6 +65,12 @@
   },
   "displayedPost": {
     "postName": "Post name",
+    "actions": {
+      "copy": "Copy description to clipboard",
+      "delete": "Delete post",
+      "saveImage": "Save image as",
+      "saveTitle": "Save changed title"
+    },
     "description": {
       "likedBy": "Liked By",
       "and": "and",

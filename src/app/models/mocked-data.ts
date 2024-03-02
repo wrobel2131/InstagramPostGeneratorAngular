@@ -1,9 +1,7 @@
-/*Models (in future, they will be in separated files) */
+import { InstagramPost } from './instagram-post.model';
+import { User } from './user.model';
 
-import { InstagramPost } from "./instagram-post.model";
-import { User } from "./user.model";
-
-export type UserDb = User & {password: string}
+export type UserDb = User & { password: string };
 export type InstagramPostDb = InstagramPost;
 
 export interface InMemoryDb {

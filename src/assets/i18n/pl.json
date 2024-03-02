@@ -65,6 +65,12 @@
   },
   "displayedPost": {
     "postName": "Nazwa postu",
+    "actions": {
+      "copy": "Kopiuj opis do schowka",
+      "delete": "Usuń post",
+      "saveImage": "Zapis obraz jako",
+      "saveTitle": "Zapisz zmieniony tytuł"
+    },
     "description": {
       "likedBy": "Polubione przez",
       "and": "i",

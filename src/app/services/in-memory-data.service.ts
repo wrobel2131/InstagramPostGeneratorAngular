@@ -7,7 +7,7 @@ import {
   STATUS,
 } from 'angular-in-memory-web-api';
 import { Observable } from 'rxjs';
-import { InMemoryDb, UserDb } from '../models/mocked-data';
+import { InMemoryDb, InstagramPostDb, UserDb } from '../models/mocked-data';
 import { User, UserLoginCredentials } from '../models/user.model';
 import { InstagramPost } from '../models/instagram-post.model';
 
@@ -63,7 +63,7 @@ export class InMemoryDataService implements InMemoryDbService {
           password: 'user5',
           coins: 0,
         },
-      ] as User[],
+      ] as UserDb[],
       posts: [
         {
           id: 1,
@@ -137,7 +137,7 @@ export class InMemoryDataService implements InMemoryDbService {
           description:
             'Reflections of Serenity captures the tranquil beauty of a still lake, its surface a perfect mirror to the world above. Surrounded by lush greenery, the water reflects the skys ever-changing moods, from the fiery hues of dawn to the soft pastels of dusk. The gentle lapping of the water whispers tales of peace and stillness, inviting the soul to pause and bask in the moment. This serene setting is a sanctuary for contemplation, a place where one can connect with nature and find inner harmony.',
         },
-      ] as InstagramPost[],
+      ] as InstagramPostDb[],
     };
   }
 
