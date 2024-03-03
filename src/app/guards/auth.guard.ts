@@ -13,7 +13,6 @@ export const AuthGuard: CanActivateFn = (route, state) => {
     return router.createUrlTree(['/signin']);
   }
   // normally userId need to be set differently
-  console.log(localStorage.getItem('userId'));
   userDataService.setUserId(Number(localStorage.getItem('userId')));
   return true;
 };

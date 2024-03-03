@@ -6,6 +6,7 @@ import { InstagramPost } from '../models/instagram-post.model';
 import { ApiService } from './api.service';
 import { catchError, filter, first, of, switchMap } from 'rxjs';
 import { toSignal, toObservable } from '@angular/core/rxjs-interop';
+import { GenerateOptions } from '../models/generated-post-options.model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,9 +20,7 @@ export class UserDataService {
   isAuthenticated = signal<boolean>(true);
 
   isAuthenticatedEffect = effect(() => {
-    console.log('Auth: ' + this.isAuthenticated());
     if (!this.isAuthenticated()) {
-      console.log('clear storage');
       this.authService.clearLocalStorage();
     }
   });
@@ -44,12 +43,9 @@ export class UserDataService {
     )
   );
 
-  // selectedPostId = signal<number>(0);
-
   selectedPost = signal<InstagramPost | undefined>(undefined);
 
   setUserId(userId: number) {
-    console.log('Set user id to: ' + userId);
     this.userId.set(userId);
   }
 
@@ -57,10 +53,10 @@ export class UserDataService {
     this.isAuthenticated.set(isAuthenticated);
   }
   setSelectedPost(post: InstagramPost) {
-    console.log('setting selected pots');
-    console.log(post);
     this.selectedPost.set(post);
   }
+
+  /* Methods which are using set methods for signals */
 
   login(userLoginCredentials: UserLoginCredentials): void {
     this.authService.login(userLoginCredentials).subscribe((response) => {
@@ -71,20 +67,23 @@ export class UserDataService {
     });
   }
 
-  updateUser(updatedUser: UpdateUser) {
-    console.log('update data service');
+  updateUser(updatedUser: UpdateUser): void {
     this.apiService
       .updateUser(updatedUser)
-      .pipe(
-        switchMap(() => {
-          return this.apiService.getUser(this.userId()!);
-        })
-      )
-      .subscribe();
+      .subscribe((updatedUser) => {
+        this.userId.set(updatedUser.id);
+      })
+      .unsubscribe();
+  }
+
+  generatePost(generateOptions: GenerateOptions): void {
+    this.apiService
+      .generatePost(generateOptions)
+      .subscribe((generatedPost) => this.selectedPost.set(generatedPost))
+      .unsubscribe();
   }
 
   logout(): void {
-    console.log('logout in dataService');
     this.setIsAuthenticated(false);
     this.router.navigate(['']);
   }

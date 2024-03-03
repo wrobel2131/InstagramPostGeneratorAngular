@@ -36,4 +36,12 @@ export const authenticatedRoutes: Routes = [
       ),
     outlet: 'main',
   },
+  {
+    path: 'buy-coins',
+    loadComponent: () =>
+      import('./components/buy-coins-page/buy-coins-page.component').then(
+        (c) => c.BuyCoinsPageComponent
+      ),
+    outlet: 'main',
+  },
 ];

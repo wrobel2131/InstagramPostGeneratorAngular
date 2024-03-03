@@ -89,10 +89,12 @@
       </radialGradient>
     </defs>
   </svg>
-  <span class="amount">20</span>
+  <span class="amount">{{ user()?.coins }}</span>
 </div>
 
-<a class="buy-coins-button" (click)="onBuyCoins()"
+<a
+  class="buy-coins-button"
+  [routerLink]="[{ outlets: { main: ['buy-coins'] } }]"
   ><span>{{ "buyCoins" | transloco }}</span>
   <i class="fa-solid fa-plus fa-xl" style="color: #000000"></i>
 </a>
