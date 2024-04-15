@@ -24,11 +24,10 @@ export class UserInfoPageComponent {
 
   user = this.userDataService.user;
 
-  isLoginEditEnabled = this.userDataService.isLoginEditEnabled;
+  isEmailEditEnabled = this.userDataService.isLoginEditEnabled;
 
   userDataForm = this.formBuilder.group({
-    login: [{ value: '', disabled: !this.isLoginEditEnabled() }],
-    email: [''],
+    email: [{ value: '', disabled: !this.isEmailEditEnabled() }],
     firstName: [''],
     lastName: [''],
   });
@@ -55,7 +54,6 @@ export class UserInfoPageComponent {
   private get updateUser(): UpdateUser {
     return {
       id: this.user()?.id!,
-      login: this.userDataForm.controls.login.value!,
       email: this.userDataForm.controls.email.value!,
       firstName: this.userDataForm.controls.firstName.value!,
       lastName: this.userDataForm.controls.lastName.value!,

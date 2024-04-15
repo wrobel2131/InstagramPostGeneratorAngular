@@ -17,7 +17,7 @@
   "loginPage": {
     "form": {
       "greetings": "Witaj!",
-      "loginLabel": "Login",
+      "emailLabel": "Email",
       "passwordLabel": "Hasło",
       "signIn": "Zaloguj się",
       "forgotPassword": "Zapomniałeś hasła?",

@@ -21,7 +21,6 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           id: 0,
           email: 'user1@example.com',
-          login: 'user1',
           firstName: 'John',
           lastName: 'Doe',
           password: 'user1',
@@ -30,7 +29,6 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           id: 1,
           email: 'user2@example.com',
-          login: 'user2',
           firstName: 'Jane',
           lastName: 'Doe',
           password: 'user2',
@@ -39,7 +37,6 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           id: 2,
           email: 'user3@example.com',
-          login: 'user3',
           firstName: 'Alice',
           lastName: 'Smith',
           password: 'user3',
@@ -48,7 +45,6 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           id: 3,
           email: 'user4@example.com',
-          login: 'user4',
           firstName: 'Bob',
           lastName: 'Brown',
           password: 'user4',
@@ -57,7 +53,6 @@ export class InMemoryDataService implements InMemoryDbService {
         {
           id: 4,
           email: 'user5@example.com',
-          login: 'user5',
           firstName: 'Charlie',
           lastName: 'Davis',
           password: 'user5',
@@ -163,7 +158,7 @@ export class InMemoryDataService implements InMemoryDbService {
     // Find the user
     const user = users.find(
       (u: UserDb) =>
-        u.login === credentials.login && u.password === credentials.password
+        u.email === credentials.email && u.password === credentials.password
     );
 
     if (user) {

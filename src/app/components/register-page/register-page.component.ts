@@ -28,7 +28,6 @@ export class RegisterPageComponent {
 
   registerForm = this.formBuilder.group({
     email: ['', Validators.required],
-    login: ['', Validators.required],
     password: ['', Validators.required],
     confirmPassword: ['', Validators.required],
   });

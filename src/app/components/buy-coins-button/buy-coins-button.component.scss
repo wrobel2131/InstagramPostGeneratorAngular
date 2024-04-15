@@ -24,6 +24,7 @@
 
 .buy-coins-button {
   @include button-mixins.button-styles;
+  color: colors.$black;
   display: flex;
   align-items: center;
   justify-content: flex-end;

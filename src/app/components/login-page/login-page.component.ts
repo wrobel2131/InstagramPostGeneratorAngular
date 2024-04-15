@@ -42,7 +42,7 @@ export class LoginPageComponent {
   private userDataService: UserDataService = inject(UserDataService);
 
   loginForm = this.formBuilder.group({
-    login: ['', Validators.required],
+    email: ['', Validators.required],
     password: ['', Validators.required],
   });
 
@@ -58,7 +58,7 @@ export class LoginPageComponent {
 
   private get userLoginCredentials(): UserLoginCredentials {
     return {
-      login: this.loginForm.controls.login.value!,
+      email: this.loginForm.controls.email.value!,
       password: this.loginForm.controls.password.value!,
     };
   }

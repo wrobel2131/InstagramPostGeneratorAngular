@@ -2,29 +2,13 @@
   <div class="control">
     <label
       class="control--label"
-      for="username"
-      [ngClass]="!isLoginEditEnabled() ? 'label--disabled' : ''"
+      for="email"
+      [ngClass]="!isEmailEditEnabled() ? 'label--disabled' : ''"
       >{{
-        "profileSettingsPage.userDataSection.userInfoPage.form.loginLabel"
+        "profileSettingsPage.userDataSection.userInfoPage.form.emailLabel"
           | transloco
       }}</label
     >
-    <input
-      class="control--input"
-      type="text"
-      name="username"
-      id="username"
-      formControlName="login"
-      [placeholder]="user()?.login"
-      [ngClass]="!isLoginEditEnabled() ? 'input--disabled' : ''"
-    />
-  </div>
-
-  <div class="control">
-    <label class="control--label" for="email">{{
-      "profileSettingsPage.userDataSection.userInfoPage.form.emailLabel"
-        | transloco
-    }}</label>
     <input
       class="control--input"
       type="text"
@@ -32,6 +16,7 @@
       id="email"
       [placeholder]="user()?.email"
       formControlName="email"
+      [ngClass]="!isEmailEditEnabled() ? 'input--disabled' : ''"
     />
   </div>
   <div class="control">

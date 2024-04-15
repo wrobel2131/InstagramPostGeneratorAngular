@@ -28,6 +28,7 @@
     background-color: colors.$white;
     box-shadow: 4px 4px 5px rgba(colors.$black, 0.1);
     padding: 15px 50px;
+    z-index: 1;
   }
 
   &__content {
