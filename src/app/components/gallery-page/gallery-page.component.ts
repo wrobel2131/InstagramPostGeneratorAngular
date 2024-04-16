@@ -15,11 +15,9 @@ export class GalleryPageComponent {
   private router: Router = inject(Router);
   private userDataService: UserDataService = inject(UserDataService);
 
-  posts = this.userDataService.posts;
+  posts = [];
 
   onDisplayPost(post: InstagramPost) {
-    console.log(post);
-    this.userDataService.setSelectedPost(post);
     this.router.navigate(['dashboard', { outlets: { main: ['displayed'] } }]);
   }
 }

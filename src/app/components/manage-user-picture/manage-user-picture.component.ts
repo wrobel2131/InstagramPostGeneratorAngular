@@ -12,5 +12,5 @@ import { UserDataService } from '../../services/user-data.service';
 export class ManageUserPictureComponent {
   private userDataService: UserDataService = inject(UserDataService);
 
-  user = this.userDataService.user;
+  user: any;
 }

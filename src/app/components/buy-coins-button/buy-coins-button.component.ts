@@ -13,5 +13,5 @@ import { UserDataService } from '../../services/user-data.service';
 export class BuyCoinsButtonComponent {
   private userDataService: UserDataService = inject(UserDataService);
 
-  user = this.userDataService.user;
+  user = {};
 }

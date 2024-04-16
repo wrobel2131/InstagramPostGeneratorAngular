@@ -22,7 +22,7 @@ import { UserDataService } from '../../services/user-data.service';
 export class ProfileMenuComponent {
   private userDataService: UserDataService = inject(UserDataService);
 
-  user = this.userDataService.user;
+  user: any;
 
   onLogout() {
     console.log('component logout');

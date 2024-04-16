@@ -22,12 +22,12 @@ export class UserInfoPageComponent {
   private userDataService: UserDataService = inject(UserDataService);
   private formBuilder: FormBuilder = inject(FormBuilder);
 
-  user = this.userDataService.user;
+  user: any;
 
-  isEmailEditEnabled = this.userDataService.isLoginEditEnabled;
+  isEmailEditEnabled = false;
 
   userDataForm = this.formBuilder.group({
-    email: [{ value: '', disabled: !this.isEmailEditEnabled() }],
+    email: [{ value: '', disabled: !this.isEmailEditEnabled }],
     firstName: [''],
     lastName: [''],
   });
@@ -40,8 +40,6 @@ export class UserInfoPageComponent {
   onUpgrade(): void {
     if (this.userDataForm.valid) {
       console.log(this.userDataForm.value);
-      console.log(this.user());
-      this.userDataService.updateUser(this.updateUser);
     }
   }
 

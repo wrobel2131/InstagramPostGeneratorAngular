@@ -14,5 +14,5 @@ export class GalleryPostElementComponent {
   @Input() post: InstagramPost | undefined = undefined;
   private userDataService: UserDataService = inject(UserDataService);
 
-  user = this.userDataService.user;
+  user: any;
 }

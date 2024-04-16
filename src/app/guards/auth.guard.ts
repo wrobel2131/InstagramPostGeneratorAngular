@@ -1,18 +1,29 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
+import { CanActivateFn } from '@angular/router';
 import { UserDataService } from '../services/user-data.service';
-import { AuthService } from '../services/auth.service';
+import { catchError, map, of } from 'rxjs';
+
+/* Guard uses isAuthenticated endpoint to get boolean value, if user is allowed to the route
+  If endpoint return true, user has access to route, if not, user is logged out and redirected to login page
+*/
 
 export const AuthGuard: CanActivateFn = (route, state) => {
   const userDataService: UserDataService = inject(UserDataService);
-  const router: Router = inject(Router);
-  const authService: AuthService = inject(AuthService);
 
-  if (!userDataService.isAuthenticated()) {
-    authService.clearLocalStorage();
-    return router.createUrlTree(['/signin']);
-  }
-  // normally userId need to be set differently
-  userDataService.setUserId(Number(localStorage.getItem('userId')));
-  return true;
+  return userDataService.checkAuthentication().pipe(
+    map((isAuthenticated) => {
+      if (isAuthenticated) {
+        console.log(isAuthenticated);
+        return true;
+      } else {
+        userDataService.logout('/signin');
+        return false;
+      }
+    }),
+    catchError((err) => {
+      console.error('Error checking authentication', err);
+      userDataService.logout();
+      return of(false);
+    })
+  );
 };

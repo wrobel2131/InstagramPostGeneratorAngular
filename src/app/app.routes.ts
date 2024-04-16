@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AuthenticatedLayoutComponent } from './components/authenticated-layout/authenticated-layout.component';
 import { AuthGuard } from './guards/auth.guard';
+import { NoAuthGuard } from './guards/no-auth.guard';
 
 export const routes: Routes = [
   {
@@ -9,6 +10,7 @@ export const routes: Routes = [
       import('./components/landing-page/landing-page.component').then(
         (c) => c.LandingPageComponent
       ),
+    canActivate: [NoAuthGuard],
     data: {
       animation: 'down',
     },
@@ -19,6 +21,7 @@ export const routes: Routes = [
       import('./components/login-page/login-page.component').then(
         (c) => c.LoginPageComponent
       ),
+    canActivate: [NoAuthGuard],
     data: {
       animation: 'left',
     },
@@ -29,6 +32,7 @@ export const routes: Routes = [
       import('./components/register-page/register-page.component').then(
         (c) => c.RegisterPageComponent
       ),
+    canActivate: [NoAuthGuard],
     data: {
       animation: 'right',
     },

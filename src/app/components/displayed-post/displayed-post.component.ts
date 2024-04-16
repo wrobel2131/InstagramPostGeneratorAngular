@@ -13,5 +13,5 @@ import { UserDataService } from '../../services/user-data.service';
 export class DisplayedPostComponent {
   private userDataService: UserDataService = inject(UserDataService);
 
-  selectedPost = this.userDataService.selectedPost;
+  selectedPost = {};
 }

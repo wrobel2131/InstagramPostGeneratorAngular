@@ -3,7 +3,7 @@
     <label
       class="control--label"
       for="email"
-      [ngClass]="!isEmailEditEnabled() ? 'label--disabled' : ''"
+      [ngClass]="!isEmailEditEnabled ? 'label--disabled' : ''"
       >{{
         "profileSettingsPage.userDataSection.userInfoPage.form.emailLabel"
           | transloco
@@ -16,7 +16,7 @@
       id="email"
       [placeholder]="user()?.email"
       formControlName="email"
-      [ngClass]="!isEmailEditEnabled() ? 'input--disabled' : ''"
+      [ngClass]="!isEmailEditEnabled ? 'input--disabled' : ''"
     />
   </div>
   <div class="control">
